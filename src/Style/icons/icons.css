@@ -1,0 +1,36 @@
+*{
+    /* seta back*/
+    IoChevronBackOutline
+    /* seta next */
+    IoChevronForwardOutline
+    /* homer */
+    BiHomeAlt2
+    /* Search */
+    FiSearch
+    /* calendar */
+    BsCalendar3Fill
+    /* emojiMan */
+    BsFillEmojiSmileFill
+    /* Nptification */
+    ImNotification
+    /* Grapch */
+    GoGraph
+    /* NavHamburg */
+    RxHamburgerMenu
+    /* ArrowUp */
+    IoIosArrowUp
+    /* Money */
+    RiMoneyDollarCircleLine
+    /* Eye */
+    FiEye
+    /* NoEye */
+    FiEyeOff
+    /* ShoppingCar */
+    MdOutlineShoppingCartCheckout
+    /* CancelX */
+    ImCancelCircle
+    /* MedicineActive */
+    RiMedicineBottleFill
+    /* NoActiveMedicine */
+    RiMedicineBottleLine
+};
