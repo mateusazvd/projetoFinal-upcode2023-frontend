@@ -1,0 +1,143 @@
+*{
+
+    margin: 0;
+    padding: 0;
+        
+    /* Font */
+    font-family: 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  
+  
+    /* var color project */
+    --cor-header-color: #0054A6;
+    --cor-segundo-header-color: #0054A6;
+    --cor-tagSelecionada-color: #009fe381 (opacity 40%);
+    --cor-tagExcluir-color: #ED1C24;
+    --cor-tagHouver-color: #6400a69d;
+  
+  }
+
+fieldset{
+    margin: 1rem;
+    border: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+label{
+    border: inset 1px var(--cor-segundo-header-color);
+  }
+
+.BlockResume{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  border:solid #0054A6;
+  width: 95vw;
+  height: 100vh;
+  margin: 2rem auto;
+  padding: 2rem;
+  }
+
+.BlockCategoria{
+  border:solid #0054A6;
+  width: 90vw;
+  height: 20vh;
+  margin: auto;
+  padding: auto;
+}
+
+.TitleResume{
+  border: solid 2px #0054A6;
+}
+
+.ResumeStyle {
+  width: auto;
+  height: 5vh;
+  font-size: 22px;
+  font-weight: 500;
+  border-left: solid 3px #0054A6;
+  padding-left: 1rem;
+  }
+
+.CategoriaStyle{
+  width: auto;
+  height: 5vh;
+  font-size: 22px;
+  font-weight: 500;
+  border-left: solid 3px #0054A6;
+  padding-left: 1rem;
+}
+
+.BlockResumeLojas {
+  width: 150vh;
+  height: 12vh;
+  margin-top: 1rem;
+  padding: 0;
+  display: flex;  
+  border-bottom: solid 0.5px var(--cor-segundo-header-color);
+}
+
+.butstyle{
+  width: 18rem;
+  height: 4rem;
+  margin-top: 1rem;
+  margin-left: 2rem;
+  font-size: 22px;
+  font-weight: 250;
+  border-radius: -5px 0px -5px 0px;
+  display: flex, inline-flex;
+  flex-wrap: wrap;
+  justify-content:left;
+  text-align: center;
+}
+
+.contaPeríodo {
+  width: 8vw;
+  padding-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 0.2rem solid var(--cor-segundo-header-color);
+}
+
+.campoPeríodo {
+  width: 8vw;
+  height: 5vh;
+  border: none;
+}
+
+.campoPeriodoFinal{
+  width: 8vw;
+  height: 5vh;
+  border: none;
+}
+
+.produtosResu{
+  background-color: #cfcece77;
+  width: 85vw;
+  height: 40vh;
+  margin: 1rem;
+  padding: 0.5rem;
+  border: solid var(--cor-segundo-header-color);
+  
+}
+
+.itenProduto{
+  padding: 1rem;
+  display: flex;  
+  font-size: 20px;
+}
+
+.buttonProduto{
+  width: 20rem;
+  padding: 0.5rem;
+  background-color: #ffffff6e;
+  font-size: 20px;
+}
+
+.PesquisaCatPerid{
+  display: flex;
+  
+}
