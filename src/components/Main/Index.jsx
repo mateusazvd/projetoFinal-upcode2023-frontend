@@ -2,7 +2,7 @@ import React from 'react'
 import Title from '../Title'
 import Input from '../Input'
 import './style.css'
-import CardLojas from '../Lojas'
+import CardLojas from '../CardLojas'
 
 
 export default function Main() {
