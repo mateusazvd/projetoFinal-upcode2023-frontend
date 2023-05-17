@@ -2,35 +2,35 @@
     /* seta back*/
     IoChevronBackOutline,
     /* seta next */
-    IoChevronForwardOutline
+    IoChevronForwardOutline,
     /* homer */
-    BiHomeAlt2
+    BiHomeAlt2,
     /* Search */
-    FiSearch
+    FiSearch,
     /* calendar */
-    BsCalendar3Fill
+    BsCalendar3Fill,
     /* emojiMan */
-    BsFillEmojiSmileFill
+    BsFillEmojiSmileFill,
     /* Nptification */
-    ImNotification
+    ImNotification,
     /* Grapch */
-    GoGraph
+    GoGraph,
     /* NavHamburg */
-    RxHamburgerMenu
+    RxHamburgerMenu,
     /* ArrowUp */
-    IoIosArrowUp
+    IoIosArrowUp,
     /* Money */
-    RiMoneyDollarCircleLine
+    RiMoneyDollarCircleLine,
     /* Eye */
-    FiEye
+    FiEye,
     /* NoEye */
-    FiEyeOff
+    FiEyeOff,
     /* ShoppingCar */
-    MdOutlineShoppingCartCheckout
+    MdOutlineShoppingCartCheckout,
     /* CancelX */
-    ImCancelCircle
+    ImCancelCircle,
     /* MedicineActive */
-    RiMedicineBottleFill
+    RiMedicineBottleFill,
     /* NoActiveMedicine */
-    RiMedicineBottleLine
-};
+    RiMedicineBottleLine;
+}
