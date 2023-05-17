@@ -1,3 +1,12 @@
 .containerMenu {
-    
+    display: flex;
+    align-items: center;
+    background-color: rgba(82, 35, 193, 0.7);
+    height: 5vh;
+    width: 100vw;
+}
+.textoMenu {
+    font-weight: bold;
+    color: aliceblue;
+    padding: 0 5rem 0 5rem;
 }

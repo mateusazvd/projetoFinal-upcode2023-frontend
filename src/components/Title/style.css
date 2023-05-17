@@ -1,0 +1,12 @@
+.titulo {
+    font-size: 22px;
+    font-weight: 500;
+    border-left: solid 3px #0054A6;
+    padding-left: 1rem;
+}
+
+.descricao {
+    padding-top: 0.5rem;
+    font-size: 14px;
+    color: #202020
+}
