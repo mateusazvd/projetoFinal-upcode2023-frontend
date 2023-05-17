@@ -1,0 +1,14 @@
+.containerInput {
+    padding-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid;
+    width: 22vw;
+    margin-bottom: 3rem;
+}
+
+.inputCampoPesq {
+    width: 20vw;
+    height: 5vh;
+    border: none;
+}

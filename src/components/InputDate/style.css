@@ -1,14 +1,18 @@
-.containerInput {
+.containerInputDate {
     padding-top: 0.5rem;
     display: flex;
     align-items: center;
     border-bottom: 2px solid;
-    width: 22vw;
-    margin-bottom: 3rem;
+    width: 8vw;
+
 }
 
 .inputCampo {
-    width: 20vw;
+    width: 8vw;
     height: 5vh;
     border: none;
+}
+.inputs {
+    display: flex;
+    column-gap: 2rem;
 }
