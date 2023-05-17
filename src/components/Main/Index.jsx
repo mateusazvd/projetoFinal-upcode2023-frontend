@@ -3,7 +3,7 @@ import Title from '../Title'
 import InputPesq from '../InputPesq'
 import InputDate from '../InputDate'
 import './style.css'
-import CardLojas from '../Lojas'
+import CardLojas from '../CardLojas'
 
 
 export default function Main() {

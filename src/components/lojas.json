@@ -1,5 +1,5 @@
-{
-  "lojas":[
+[
+
   {
     "codigo": 1,
     "codigoDeposito": 1,
@@ -360,4 +360,5 @@
     "bloqueioFaceamento": "N",
     "dataImplantacaoTransito": null
   }
-]}
+  
+]
