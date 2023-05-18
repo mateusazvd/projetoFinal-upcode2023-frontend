@@ -5,8 +5,13 @@ fieldset{
 .TitleResumo{
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 }
+
+.resContainerCadeado {
+    display: flex;
+    
+} 
 
 .H3Resume{
     border-left: solid 1px #1a00ac;
@@ -29,7 +34,7 @@ fieldset{
     width: 0.8rem;
     height: 0.6rem;
     margin: 1rem;
-    padding: 0.1rem;
+    
 }
 
 .ResumPerDate{
@@ -46,5 +51,4 @@ fieldset{
     width: 0.8rem;
     height: 0.6rem;
     margin: 1rem;
-    padding: 0.5rem;
 }

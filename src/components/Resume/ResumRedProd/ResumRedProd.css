@@ -1,4 +1,4 @@
-@import '../../../App.css'
+@import '../../../App.css';
 
 fieldset{
     border: none;
@@ -6,8 +6,8 @@ fieldset{
 
 .ResuProdutos{
     display: flex;
-    flex-direction: column;
-    margin-left: 1rem;
+    flex-wrap: wrap;
+    margin: 1rem;
 }
 
 .ResumRedProd{
@@ -18,17 +18,19 @@ fieldset{
 }
 
 .RedProd{
-    width: 25vw;
-    height: 10vh;
+    width: 20vw;
+    height: 5vh;
     margin: 1rem;
     display: flex;
-    border: inset #8a2be2 1px; 
+    border: inset var(--cor-segundo-header-color) 1px; 
     align-items: center;
+    align-content: center;
     justify-items: center;
+    justify-content: center;
 }
 
 .InpRedProd{
-    width: 1rem;
-    margin-left: 1rem;
-
+    width: 0.8rem;
+    height: 0.6rem;
+    margin-left: 0.5rem;
 }

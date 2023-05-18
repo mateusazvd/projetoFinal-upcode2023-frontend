@@ -1,21 +1,15 @@
-fieldset{
-  border: none;
+
+.titleLoja {
+  font-size: 22px;
 }
 
-.TitleResumLojas {  
-    border-bottom: solid 0.5px var(--cor-segundo-header-color);
-    margin-left: 1rem;
-  }
-
 .ResumRedLojas{
-  width: 95vw;
-  height: 20vh;
-  margin: 1rem;
-  display: flex;
-  flex-direction: row;
+  height: 5vh;
+  margin-top: 1rem;
 }
 
 .RedInpLoja{
-  width: 1rem;
-  margin-left: 1rem;
+  width: 0.8rem;
+  height: 0.6rem;
+  margin-left: 0.5rem;
 }
