@@ -1,18 +1,36 @@
+@import '../../../App.css';
+
 fieldset{
     border: none;
 }
 
 .ResuProdutos{
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 1rem;
 }
 
 .ResumRedProd{
+    width: 95vw;
+    height: 40vh;
+    border: solid 1px #6f00ff;
+    display: flex; 
+}
+
+.RedProd{
+    width: 20vw;
+    height: 5vh;
+    margin: 1rem;
     display: flex;
-    align-items: center;  
+    border: inset var(--cor-segundo-header-color) 1px; 
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
 }
 
 .InpRedProd{
-    margin: 1rem;
-    padding: 0.5rem;
+    width: 0.8rem;
+    height: 0.6rem;
+    margin-left: 0.5rem;
 }
