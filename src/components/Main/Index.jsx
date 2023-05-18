@@ -6,7 +6,8 @@ import InputDate from '../InputDate'
 import CardLojas from '../CardLojas'
 import Produtos from '../Produtos'
 import DropDown from '../DropDown'
-
+import ProdutosList from '../../moks/produtos.json'
+import LojasList from '../../moks/lojas.json'
 
 export default function Main() {
   return (
@@ -21,15 +22,7 @@ export default function Main() {
 
         </div>
         <div className='resultLojas'>
-          <CardLojas />
-          <CardLojas />
-          <CardLojas />
-          <CardLojas />
-          <CardLojas />
-          <CardLojas />
-          <CardLojas />
-          <CardLojas />
-          <CardLojas />
+          {LojasList.map(item => <CardLojas Key={item.id}  nome={item.nomeFilial} />)}
         </div>
       </div>
 
@@ -70,22 +63,12 @@ export default function Main() {
         <div className='va'>
           {/* Input único de marcação */}
           <input type="radio" id='bucarTodos' value='check' />
-          <label htmlFor="bucarTodos">Selecionar todos os produtos</label>
+          <span htmlFor="bucarTodos" className='input-selecionar-todos'>Selecionar todos os produtos</span>
         </div>
 
         <div className='containerSelecProdutos'>
           <div className='listaProdutos'>
-            <Produtos />
-            <Produtos />
-            <Produtos />
-            <Produtos />
-            <Produtos />
-            <Produtos />
-            <Produtos />
-            <Produtos />
-            <Produtos />
-            <Produtos />
-            <Produtos />
+            {ProdutosList.map(item => <Produtos key={item.id} descricao={item.descricao} nome={item.nome} />)}
           </div>
         </div>
       </div>
