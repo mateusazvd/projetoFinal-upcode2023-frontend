@@ -1,0 +1,12 @@
+fieldset{
+  border: none;
+}
+
+.TitleResumLojas {  
+    border-bottom: solid 0.5px var(--cor-segundo-header-color);
+  }
+
+.ResumRedLojas{
+  display: flex;
+  flex-direction: column;
+}

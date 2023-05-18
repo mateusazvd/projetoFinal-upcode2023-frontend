@@ -1,0 +1,41 @@
+fieldset{
+    border:  none;
+}
+
+.TitleResumo{
+    display: flex;
+
+}
+
+.H3Resume{
+    height: 6vh;
+    border-left: solid 1px #1a00ac;
+    padding: 1rem;
+}
+
+.Cat{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.Cath3{
+    margin: 0;
+    padding: 1rem;
+
+}
+
+.PerDate{
+    display: flex;
+    align-items: center;
+}
+
+.DatePerid{
+    display: flex;
+
+}
+
+.InputDate{
+    display: flex;
+    margin: 2px;
+}
