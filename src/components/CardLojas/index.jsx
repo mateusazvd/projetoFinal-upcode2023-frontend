@@ -1,7 +1,7 @@
 import React from 'react'
 import './style.css'
 
-export default function CardLojas({nome, id}) {
+export default function CardLojas({nome, id, }) {
   return (
     <div className='containerLoja' id={id}>
         <div className='loja' >

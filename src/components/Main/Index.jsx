@@ -8,30 +8,44 @@ import Produtos from '../Produtos'
 import DropDown from '../DropDown'
 import ProdutosList from '../../moks/produtos.json'
 import LojasList from '../../moks/lojas.json'
+import { useState } from 'react'
 
 export default function Main() {
+  const [pesquisa, setPesquisa] = useState('');
+  const [lista,setLista] = useState(LojasList)
+
+
+
+  function Pesquisar(text){
+    const lojasFiltradas = LojasList.filter(item => item.nomeFilial.includes(text))
+    setLista(lojasFiltradas)
+    setPesquisa(text)
+    alert(lojasFiltradas[0]);
+  }
+
   return (
     <div className='containerMain'>
       <div className='containerLojas'>
         <div className='lojasPesquisa' >
           <Title
-          className="titleInput"
+            className="titleInput"
             titulo="Lojas"
             descricao="Selecione as lojas que realizarão a pesquisa"
           />
-          <InputPesq className="inputPesq" placeholder='Pesquisar lojas' />
+          <InputPesq
+            className="inputPesq"
+            placeholder='Pesquisar lojas'
+            value={pesquisa}
+            onChange={e => Pesquisar(e.target.value)}
+          />
         </div>
         <>
-        <div className='resultLojas'>
-            {LojasList.map(item => <CardLojas Key={item.id} nome={item.nomeFilial} />)}
+          <div className='resultLojas'>
+            {/* {LojasList.map(item => <CardLojas Key={item.id} nome={item.nomeFilial} />)} */}
+            {lista.map(item => <CardLojas key={item.id} nome={item.nomeFilial} />)}
           </div>
         </>
-
-        
       </div>
-
-
-
       <div className='containerCadeado'>
         <div className='containerMainPart'>
           <div className='formProduto'>
