@@ -1,7 +1,7 @@
 .containerMenu {
     display: flex;
     align-items: center;
-    background-color: rgba(82, 35, 193, 0.7);
+    background-color: #0053a6c2;
     height: 5vh;
     width: 100vw;
 }

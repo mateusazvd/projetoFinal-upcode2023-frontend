@@ -11,7 +11,7 @@
 
   /* var color project */
   --cor-header-color: #0054A6;
-  --cor-segundo-header-color: #0054A6;
+  --cor-segundo-header-color: rgba(0, 84, 166, 0.7);
   --cor-tagSelecionada-color: #009fe381 (opacity 40%);
   --cor-tagExcluir-color: #ED1C24;
   --cor-tagHouver-color: #6400a69d;
