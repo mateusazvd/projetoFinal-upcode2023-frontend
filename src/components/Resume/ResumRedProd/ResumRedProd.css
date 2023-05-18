@@ -1,0 +1,18 @@
+fieldset{
+    border: none;
+}
+
+.ResuProdutos{
+    display: flex;
+    flex-direction: column;
+}
+
+.ResumRedProd{
+    display: flex;
+    align-items: center;  
+}
+
+.InpRedProd{
+    margin: 1rem;
+    padding: 0.5rem;
+}

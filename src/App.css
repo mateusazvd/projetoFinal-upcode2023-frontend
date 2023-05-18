@@ -1,3 +1,23 @@
+*{
+
+    margin: 0;
+    padding: 0;
+    
+    /* Font */
+    font-family: 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  
+  
+    /* var color project */
+    --cor-header-color: #0054A6;
+    --cor-segundo-header-color: #0054A6;
+    --cor-tagSelecionada-color: #009fe381 (opacity 40%);
+    --cor-tagExcluir-color: #ED1C24;
+    --cor-tagHouver-color: #6400a69d;
+  
+  }
+
 .App {
     height: 100vh;
     width: 100vw;
