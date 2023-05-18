@@ -8,7 +8,11 @@
 }
 
 .inputCampoPesq {
-    width: 20vw;
+    width: 100vw;
     height: 5vh;
     border: none;
+}
+
+.iconePesquisa {
+    width: 150px;
 }

@@ -4,7 +4,8 @@ import {AiOutlineSearch} from 'react-icons/ai'
 
 export default function Input(props) {
   return (
-    <div className='containerInput'>
+    // tamanho da div está passando no componente Main
+    <div className='containerInput' style={{width:`${props.tamanho}px`}}>
         <input className='inputCampoPesq' type="search" placeholder={props.placeholder}/>
         <AiOutlineSearch className='iconePesquisa'/>
     </div>

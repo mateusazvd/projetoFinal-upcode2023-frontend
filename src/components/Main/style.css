@@ -1,13 +1,18 @@
+*{
+    overflow-x: hidden;
+}
+
 .containerMain {
     background-color: #ffffff;
     width: 90vw;
-    height: 80vh;
+    height: 100vh;
     margin: 2rem auto;
     border-radius: 10px;
-    padding: 2rem;
+    padding: 1rem 2rem ;
     display: flex;
-    column-gap: 15rem;
+    column-gap: 10rem;
 }
+
 .containerMainPart {
     display: flex;
     column-gap: 6rem;
@@ -19,4 +24,40 @@
 
 hr {
     height: 15vh;
+}
+
+.containerProduto {
+    margin-top: 2rem;
+}
+.containerSelecProdutos{
+    height: auto;
+    padding-top: 1rem;
+}
+
+.listaProdutos {
+    height: 45vh;
+    width: 40vw;
+}
+.listaProdutos::-webkit-scrollbar{
+    width: 2px;
+    height: 8px;
+    background-color: rgba(212, 212, 212, 0.951);
+}
+.listaProdutos::-webkit-scrollbar-thumb {
+    background: var(--cor-header-color);
+    height: 10px;
+}
+
+
+
+.lojasPesquisa{
+    overflow-y: hidden;
+    width: 24vw;
+}
+
+.containerLojas {
+    display: flex;
+    flex-direction: column;
+    height: 85vh;
+    row-gap: 1rem;
 }
