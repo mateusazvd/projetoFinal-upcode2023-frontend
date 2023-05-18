@@ -10,6 +10,7 @@
     border-radius: 5px;
     width: 22vw;    
     padding: 1rem 1rem;
+    justify-content: space-between;
 }
 
 .check {

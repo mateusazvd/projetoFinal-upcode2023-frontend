@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 .corDeFundo {
-    background-color: #5900a6;
+    background-color: var(--cor-header-color);
     width: 100vw;
     height: 8vh;
 }
