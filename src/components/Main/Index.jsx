@@ -15,16 +15,22 @@ export default function Main() {
       <div className='containerLojas'>
         <div className='lojasPesquisa' >
           <Title
+          className="titleInput"
             titulo="Lojas"
             descricao="Selecione as lojas que realizarão a pesquisa"
           />
-          <InputPesq placeholder='Pesquisar lojas' />
-
+          <InputPesq className="inputPesq" placeholder='Pesquisar lojas' />
         </div>
+        <>
         <div className='resultLojas'>
-          {LojasList.map(item => <CardLojas Key={item.id}  nome={item.nomeFilial} />)}
-        </div>
+            {LojasList.map(item => <CardLojas Key={item.id} nome={item.nomeFilial} />)}
+          </div>
+        </>
+
+        
       </div>
+
+
 
       <div className='containerCadeado'>
         <div className='containerMainPart'>
