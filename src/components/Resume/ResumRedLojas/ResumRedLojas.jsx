@@ -9,10 +9,12 @@ export default function ResumRedLojas(){
         <>
             <div className='TitleResumLojas'>
                 <h2>Lojas</h2>
+            </div>
+            <div>
                 <fieldset className="ResumRedLojas">
                     <h2>RendLojas</h2>
                     <label htmlFor="">
-                        <input type="button" name="" id="" />
+                        <input className="RedInpLoja" type="button" name="" id="" />
                     </label>
                 </fieldset>
             </div>

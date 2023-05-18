@@ -14,22 +14,19 @@ export default function TitleCatResum(){
                     <h3 className='Cath3'>
                         Categoria: 
                     </h3>
-                    <label>
-                        <input type="search" placeholder="Categoria" name="Categoria" id="CatagoriaId"/>
+                    <h3>RedCategoria</h3>
+                    <label htmlFor="">
+                        <input className="RedCatInp" type="button" name="" id="" />
                     </label>
                 </fieldset>
-                <fieldset className='PerDate'>
+                <fieldset className='ResumPerDate'>
                     <h3>
-                        Perído
+                        Perído:
                     </h3>
-                    <div className='DatePerid'>
-                        <label htmlFor="dataInicio">
-                            <input className='InputDate' type="date" name="dataInicio" id="dataInicio" placeholder='Inicio'/>
-                        </label>
-                        <label htmlFor="dataFinal">
-                            <input className='InputDate' type="date" name="dataFinal" id="dataFinal"/>
-                        </label>
-                    </div>
+                    <h3 className="ResumRedPerDate">RedPerído</h3>
+                    <label htmlFor="">
+                        <input className="RedPerInp" type="button" name="" id="" />
+                    </label>
                 </fieldset>
             </div>
         </>

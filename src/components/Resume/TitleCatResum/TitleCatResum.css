@@ -4,11 +4,11 @@ fieldset{
 
 .TitleResumo{
     display: flex;
-
+    align-items: center;
+    justify-content: space-around;
 }
 
 .H3Resume{
-    height: 6vh;
     border-left: solid 1px #1a00ac;
     padding: 1rem;
 }
@@ -25,17 +25,26 @@ fieldset{
 
 }
 
-.PerDate{
+.RedCatInp{
+    width: 0.8rem;
+    height: 0.6rem;
+    margin: 1rem;
+    padding: 0.1rem;
+}
+
+.ResumPerDate{
     display: flex;
+    margin: 1rem;
     align-items: center;
 }
 
-.DatePerid{
-    display: flex;
-
+.ResumRedPerDate{
+    margin: 1rem;
 }
 
-.InputDate{
-    display: flex;
-    margin: 2px;
+.RedPerInp{
+    width: 0.8rem;
+    height: 0.6rem;
+    margin: 1rem;
+    padding: 0.5rem;
 }

@@ -12,10 +12,12 @@ export default function ResumRedProd(){
                     Produtos
                 </h1>
                 <fieldset className='ResumRedProd'>
-                    <h3>RederProdutos</h3>
-                    <label htmlFor="">
-                        <input className='InpRedProd' type="button" name="" id="" />
-                    </label>
+                    <div className="RedProd">
+                        <h3>RederProdutos</h3>
+                        <label htmlFor="">
+                            <input className='InpRedProd' type="button" name="" id="" />
+                        </label>
+                    </div>
                 </fieldset>
             </div>
         </>

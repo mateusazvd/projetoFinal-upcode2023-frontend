@@ -1,3 +1,5 @@
+@import '../../../App.css'
+
 fieldset{
     border: none;
 }
@@ -5,14 +7,28 @@ fieldset{
 .ResuProdutos{
     display: flex;
     flex-direction: column;
+    margin-left: 1rem;
 }
 
 .ResumRedProd{
+    width: 95vw;
+    height: 40vh;
+    border: solid 1px #6f00ff;
+    display: flex; 
+}
+
+.RedProd{
+    width: 25vw;
+    height: 10vh;
+    margin: 1rem;
     display: flex;
-    align-items: center;  
+    border: inset #8a2be2 1px; 
+    align-items: center;
+    justify-items: center;
 }
 
 .InpRedProd{
-    margin: 1rem;
-    padding: 0.5rem;
+    width: 1rem;
+    margin-left: 1rem;
+
 }
