@@ -3,6 +3,12 @@
   margin: 0;
   padding: 0;
   
+  /* Font */
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+
   /* var color project */
   --cor-header-color: #0054A6;
   --cor-segundo-header-color: #0054A6;
