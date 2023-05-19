@@ -88,11 +88,11 @@ export default function Main() {
             <div className='inputs'>
               <div>
                 <p className='descricaoInputDate'>inicio</p>
-                <InputDate />
+                <InputDate mudarData ={dataInicial}/>
               </div>
               <div>
                 <p className='descricaoInputDate'>fim</p>
-                <InputDate />
+                <InputDate mudarData ={dataFinal}/>
               </div>
             </div>
           </div>
