@@ -8,39 +8,34 @@ import Produtos from '../Produtos'
 import DropDown from '../DropDown'
 import ProdutosList from '../../moks/produtos.json'
 import LojasList from '../../moks/lojas.json'
-import { useState, useContext } from 'react'
-import { FormContext } from '../../Context/formPesquisaContext'
-
+import { useState } from 'react'
 
 export default function Main() {
-
-  const {Form, SetForm} = useContext(FormContext);
   const [pesquisa, setPesquisa] = useState('');
-  const [lista, setLista] = useState(LojasList);
-
+  const [lista, setLista] = useState(LojasList)
 
   const [pesquisaProduto, setPesquisaProduto] = useState('');
   const [listaProdutos, setListaProduto] = useState(ProdutosList)
 
-  function Pesquisar(text) {
-    const lojasFiltradas = LojasList.filter(item => item.nomeFilial.includes(text))
+   
+  function PesquisarProdutos(text) {
+    const produtosFilter = ProdutosList.filter(produto =>produto.nome.toLowerCase().includes(pesquisaProduto.toLowerCase())) ;
+    setListaProduto(produtosFilter)
+    setPesquisaProduto(text)
+
+    if (text.length == 0) {
+      setListaProduto(ProdutosList)
+    }
+
+  }
+  function PesquisarLoja(text) {
+    const lojasFiltradas = LojasList.filter(item => item.nomeFilial.toLowerCase().includes(pesquisa.toLowerCase()));
     setLista(lojasFiltradas)
     setPesquisa(text)
 
     if (text.length == 0) {
       setLista(LojasList)
     }
-  }
-  function dataInicial(data) {
-    Form.dataInicio = data;
-    SetForm(Form)
-    console.log(Form.dataInicio,"Data-inicial");
-  }
-  function dataFinal(data) {
-    Form.dataFinal = data;
-    SetForm(Form)
-    console.log(Form.dataFinal,"data-final");
-
   }
 
   return (
@@ -51,22 +46,23 @@ export default function Main() {
             className="titleInput"
             titulo="Lojas"
             descricao="Selecione as lojas que realizarão a pesquisa"
+
+
           />
           <InputPesq
             className="inputPesq"
             placeholder='Pesquisar lojas'
             value={pesquisa}
-            pesquisar={Pesquisar}
+            pesquisar={PesquisarLoja}
 
           />
 
         </div>
-
-        <div className='resultLojas'>
-          {/* {LojasList.map(item => <CardLojas Key={item.id} nome={item.nomeFilial} />)} */}
-          {lista.map(item => <CardLojas key={item.id} nome={item.nomeFilial} />)}
-        </div>
-
+        <>
+          <div className='resultLojas'>
+            {lista.map(item => <CardLojas key={item.codigo} nome={item.nomeFilial} id ={item.codigo} />)}
+          </div>
+        </>
       </div>
       <div className='containerCadeado'>
         <div className='containerMainPart'>
@@ -86,14 +82,8 @@ export default function Main() {
               descricao='Determine o período da pesquisa'
             />
             <div className='inputs'>
-              <div>
-                <p className='descricaoInputDate'>inicio</p>
-                <InputDate mudarData ={dataInicial}/>
-              </div>
-              <div>
-                <p className='descricaoInputDate'>fim</p>
-                <InputDate mudarData ={dataFinal}/>
-              </div>
+              <InputDate />
+              <InputDate />
             </div>
           </div>
         </div>
@@ -107,7 +97,7 @@ export default function Main() {
             tamanho="500"
             placeholder='Pesquisar produtos'
             value={pesquisaProduto}
-            pesquisar={pesquisaProduto}
+            pesquisar = {PesquisarProdutos}
 
           />
         </div>
