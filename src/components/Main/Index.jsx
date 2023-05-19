@@ -8,19 +8,39 @@ import Produtos from '../Produtos'
 import DropDown from '../DropDown'
 import ProdutosList from '../../moks/produtos.json'
 import LojasList from '../../moks/lojas.json'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import { FormContext } from '../../Context/formPesquisaContext'
+
 
 export default function Main() {
+
+  const {Form, SetForm} = useContext(FormContext);
   const [pesquisa, setPesquisa] = useState('');
-  const [lista, setLista] = useState(LojasList)
+  const [lista, setLista] = useState(LojasList);
 
 
+  const [pesquisaProduto, setPesquisaProduto] = useState('');
+  const [listaProdutos, setListaProduto] = useState(ProdutosList)
 
   function Pesquisar(text) {
     const lojasFiltradas = LojasList.filter(item => item.nomeFilial.includes(text))
     setLista(lojasFiltradas)
     setPesquisa(text)
-    alert(lojasFiltradas[0]);
+
+    if (text.length == 0) {
+      setLista(LojasList)
+    }
+  }
+  function dataInicial(data) {
+    Form.dataInicio = data;
+    SetForm(Form)
+    console.log(Form.dataInicio,"Data-inicial");
+  }
+  function dataFinal(data) {
+    Form.dataFinal = data;
+    SetForm(Form)
+    console.log(Form.dataFinal,"data-final");
+
   }
 
   return (
@@ -36,8 +56,10 @@ export default function Main() {
             className="inputPesq"
             placeholder='Pesquisar lojas'
             value={pesquisa}
-            onChange={e => Pesquisar(e.target.value)}
+            pesquisar={Pesquisar}
+
           />
+
         </div>
 
         <div className='resultLojas'>
@@ -84,6 +106,9 @@ export default function Main() {
           <InputPesq
             tamanho="500"
             placeholder='Pesquisar produtos'
+            value={pesquisaProduto}
+            pesquisar={pesquisaProduto}
+
           />
         </div>
         <div className='va'>
@@ -94,7 +119,7 @@ export default function Main() {
 
         <div className='containerSelecProdutos'>
           <div className='listaProdutos'>
-            {ProdutosList.map(item => <Produtos key={item.id} descricao={item.descricao} nome={item.nome} />)}
+            {listaProdutos.map(item => <Produtos key={item.id} descricao={item.descricao} nome={item.nome} />)}
           </div>
         </div>
       </div>
