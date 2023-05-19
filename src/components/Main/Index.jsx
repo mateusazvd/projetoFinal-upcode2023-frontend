@@ -8,18 +8,22 @@ import Produtos from '../Produtos'
 import DropDown from '../DropDown'
 import ProdutosList from '../../moks/produtos.json'
 import LojasList from '../../moks/lojas.json'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import { FormContext } from '../../Context/formPesquisaContext'
+
 
 export default function Main() {
   const [pesquisa, setPesquisa] = useState('');
   const [lista, setLista] = useState(LojasList)
+  const { Form, SetForm } = useContext(FormContext);
+
 
   const [pesquisaProduto, setPesquisaProduto] = useState('');
   const [listaProdutos, setListaProduto] = useState(ProdutosList)
 
 
   function PesquisarProdutos(text) {
-    const produtosFilter = ProdutosList.filter(produto =>produto.nome.toLowerCase().includes(pesquisaProduto.toLowerCase())) ;
+    const produtosFilter = ProdutosList.filter(produto => produto.nome.toLowerCase().includes(pesquisaProduto.toLowerCase()));
     setListaProduto(produtosFilter)
     setPesquisaProduto(text)
 
@@ -37,6 +41,17 @@ export default function Main() {
       setLista(LojasList)
     }
   }
+  function dataInicial(data) {
+    Form.dataInicio = data;
+    SetForm(Form)
+    console.log(Form.dataInicio,"Data-inicial");
+  }
+  function dataFinal(data) {
+    Form.dataFinal = data;
+    SetForm(Form)
+    console.log(Form.dataFinal,"data-final");
+
+  }
 
   return (
     <div className='containerMain'>
@@ -46,8 +61,6 @@ export default function Main() {
             className="titleInput"
             titulo="Lojas"
             descricao="Selecione as lojas que realizarão a pesquisa"
-
-
           />
           <InputPesq
             className="inputPesq"
@@ -82,8 +95,8 @@ export default function Main() {
               descricao='Determine o período da pesquisa'
             />
             <div className='inputs'>
-              <InputDate />
-              <InputDate />
+              <InputDate mudarData={dataInicial} />
+              <InputDate mudarData={dataFinal} />
             </div>
           </div>
         </div>
@@ -97,7 +110,7 @@ export default function Main() {
             tamanho="500"
             placeholder='Pesquisar produtos'
             value={pesquisaProduto}
-            pesquisar = {PesquisarProdutos}
+            pesquisar={PesquisarProdutos}
 
           />
         </div>
