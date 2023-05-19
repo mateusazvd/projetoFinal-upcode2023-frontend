@@ -73,7 +73,7 @@ export default function Main() {
         </div>
         <>
           <div className='resultLojas'>
-            {lista.map(item => <CardLojas key={item.id} nome={item.nomeFilial} />)}
+            {lista.map(item => <CardLojas key={item.codigo} nome={item.nomeFilial} id ={item.codigo} />)}
           </div>
         </>
       </div>
