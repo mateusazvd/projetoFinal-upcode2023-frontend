@@ -7,7 +7,7 @@ export default function Header() {
 
     return (
         <div className='corDeFundo'>
-            {nome}
+            
         </div> 
     )
 }
