@@ -19,12 +19,12 @@ export default function Main() {
 
 
   function PesquisarProdutos(text) {
-    const produtosFilter = ProdutosList.filter(produto =>produto.nome.toLocaleLowerCase().includes(pesquisaProduto.toLocaleLowerCase()) ) 
+    const produtosFilter = ProdutosList.filter(produto =>produto.nome.toLowerCase().includes(pesquisaProduto.toLowerCase())) ;
     setListaProduto(produtosFilter)
     setPesquisaProduto(text)
 
-    if (text.length == '') {
-      setPesquisaProduto(ProdutosList)
+    if (text.length == 0) {
+      setListaProduto(ProdutosList)
     }
 
   }
@@ -33,7 +33,7 @@ export default function Main() {
     setLista(lojasFiltradas)
     setPesquisa(text)
 
-    if (text.length == '') {
+    if (text.length == 0) {
       setLista(LojasList)
     }
   }
