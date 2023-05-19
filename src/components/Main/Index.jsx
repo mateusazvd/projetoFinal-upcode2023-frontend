@@ -12,15 +12,30 @@ import { useState } from 'react'
 
 export default function Main() {
   const [pesquisa, setPesquisa] = useState('');
-  const [lista,setLista] = useState(LojasList)
+  const [lista, setLista] = useState(LojasList)
+
+  const [pesquisaProduto, setPesquisaProduto] = useState('');
+  const [listaProdutos, setListaProduto] = useState(ProdutosList)
 
 
+  function PesquisarProdutos(text) {
+    const produtosFilter = ProdutosList.filter(produto =>produto.nome.toLocaleLowerCase().includes(pesquisaProduto.toLocaleLowerCase()) ) 
+    setListaProduto(produtosFilter)
+    setPesquisaProduto(text)
 
-  function Pesquisar(text){
-    const lojasFiltradas = LojasList.filter(item => item.nomeFilial.includes(text))
+    if (text.length == '') {
+      setPesquisaProduto(ProdutosList)
+    }
+
+  }
+  function PesquisarLoja(text) {
+    const lojasFiltradas = LojasList.filter(item => item.nomeFilial.toLowerCase().includes(pesquisa.toLowerCase()));
     setLista(lojasFiltradas)
     setPesquisa(text)
-    alert(lojasFiltradas[0]);
+
+    if (text.length == '') {
+      setLista(LojasList)
+    }
   }
 
   return (
@@ -31,17 +46,20 @@ export default function Main() {
             className="titleInput"
             titulo="Lojas"
             descricao="Selecione as lojas que realizarão a pesquisa"
+
+
           />
           <InputPesq
             className="inputPesq"
             placeholder='Pesquisar lojas'
             value={pesquisa}
-            onChange={e => Pesquisar(e.target.value)}
+            pesquisar={PesquisarLoja}
+
           />
+
         </div>
         <>
           <div className='resultLojas'>
-            {/* {LojasList.map(item => <CardLojas Key={item.id} nome={item.nomeFilial} />)} */}
             {lista.map(item => <CardLojas key={item.id} nome={item.nomeFilial} />)}
           </div>
         </>
@@ -78,6 +96,9 @@ export default function Main() {
           <InputPesq
             tamanho="500"
             placeholder='Pesquisar produtos'
+            value={pesquisaProduto}
+            pesquisar = {PesquisarProdutos}
+
           />
         </div>
         <div className='va'>
@@ -88,7 +109,7 @@ export default function Main() {
 
         <div className='containerSelecProdutos'>
           <div className='listaProdutos'>
-            {ProdutosList.map(item => <Produtos key={item.id} descricao={item.descricao} nome={item.nome} />)}
+            {listaProdutos.map(item => <Produtos key={item.id} descricao={item.descricao} nome={item.nome} />)}
           </div>
         </div>
       </div>
