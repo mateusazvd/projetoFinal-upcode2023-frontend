@@ -3,19 +3,13 @@ import '../../../App.css'
 import './ResumRedLojas.css'
 
 
-export default function ResumRedLojas(){
 
-    return(
+export default function ResumRedLojas() {
+
+    return (
         <>
             <div className='TitleResumLojas'>
                 <p className="titleLoja">Lojas</p>
-            </div>
-            <div>
-                <div className="ResumRedLojas">
-                    <div className="EleRedLoj">
-                    
-                    </div>
-                </div>
             </div>
         </>
     )

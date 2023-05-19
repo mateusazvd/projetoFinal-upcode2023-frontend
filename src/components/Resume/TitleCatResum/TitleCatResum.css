@@ -1,7 +1,3 @@
-fieldset{
-    border:  none;
-}
-
 .TitleResumo{
     display: flex;
     align-items: center;
@@ -10,12 +6,11 @@ fieldset{
 
 .resContainerCadeado {
     display: flex;
-    
+    align-items: center;
+    column-gap: 5rem;
 } 
-
-.H3Resume{
-    border-left: solid 1px #1a00ac;
-    padding: 1rem;
+.resultCategoria {
+    padding-left: 1rem;
 }
 
 .Cat{
@@ -25,21 +20,22 @@ fieldset{
 }
 
 .Cath3{
-    margin: 0;
-    padding: 1rem;
-
+    font-weight: 500;
+    font-size: 22px;
 }
 
-.RedCatInp{
-    width: 0.8rem;
-    height: 0.6rem;
-    margin: 1rem;
+.resultPeriodo {
+    border-bottom: solid 1px;
+}
+.resultPeriodoInput {
+    border: none;
     
 }
-
+.separadorDate {
+    padding: .5rem;
+}
 .ResumPerDate{
     display: flex;
-    margin: 1rem;
     align-items: center;
 }
 
@@ -47,8 +43,8 @@ fieldset{
     margin: 1rem;
 }
 
-.RedPerInp{
-    width: 0.8rem;
-    height: 0.6rem;
-    margin: 1rem;
+.ResumRedPerDate, h3{
+font-size: 22px;
+padding-right: 1rem;
+font-weight: 500;
 }

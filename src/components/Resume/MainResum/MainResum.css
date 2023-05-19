@@ -5,3 +5,20 @@
     border-radius: 10px;
     padding: 1rem 2rem;
 }
+
+/* Card de lojas */
+.resuCardLojas {
+    display: flex;
+    column-gap: 1.5rem;
+    flex-wrap: wrap;
+    row-gap: 1rem;  
+}
+
+
+/* Card de produtos */
+.resuCardProdutos {
+    display: flex;
+    column-gap: 1.5rem;
+    flex-wrap: wrap;
+    row-gap: 1rem;
+}

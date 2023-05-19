@@ -4,21 +4,13 @@ import './ResumRedProd.css'
 
 
 
-export default function ResumRedProd(){
-    return(
+export default function ResumRedProd() {
+    return (
         <>
             <div className='ResuProdutos'>
-                <h1>
+                <h2 className="titleProdutos">
                     Produtos
-                </h1>
-                <fieldset className='ResumRedProd'>
-                    <div className="RedProd">
-                        <h3>RederProdutos</h3>
-                        <label htmlFor="">
-                            <input className='InpRedProd' type="button" name="" id="" />
-                        </label>
-                    </div>
-                </fieldset>
+                </h2>
             </div>
         </>
     )

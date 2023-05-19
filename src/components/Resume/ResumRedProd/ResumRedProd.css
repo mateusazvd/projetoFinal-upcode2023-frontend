@@ -1,36 +1,19 @@
 @import '../../../App.css';
 
-fieldset{
-    border: none;
+.titleProdutos {
+    font-weight: 500;
+    font-size: 22px;
 }
 
 .ResuProdutos{
     display: flex;
     flex-wrap: wrap;
-    margin: 1rem;
+    margin: 3rem 0 1rem;
 }
 
 .ResumRedProd{
-    width: 95vw;
-    height: 40vh;
-    border: solid 1px #6f00ff;
+    width: 95vw; 
     display: flex; 
 }
 
-.RedProd{
-    width: 20vw;
-    height: 5vh;
-    margin: 1rem;
-    display: flex;
-    border: inset var(--cor-segundo-header-color) 1px; 
-    align-items: center;
-    align-content: center;
-    justify-items: center;
-    justify-content: center;
-}
 
-.InpRedProd{
-    width: 0.8rem;
-    height: 0.6rem;
-    margin-left: 0.5rem;
-}

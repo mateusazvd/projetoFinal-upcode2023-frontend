@@ -16,11 +16,21 @@ export default function TitleCatResum() {
                         <h3 className='Cath3'>
                             Categoria:
                         </h3>
+                        <p className="resultCategoria">Genericos</p>
                     </div>
                     <div className='ResumPerDate'>
                         <h3>
                             Perído:
                         </h3>
+                        <div className="resultPeriodo">
+                            <input className="resultPeriodoInput" type="date" name="" id="" />
+                        </div>
+
+                        <p className="separadorDate">até</p>
+
+                        <div className="resultPeriodo">
+                            <input className="resultPeriodoInput" type="date" name="" id="" />
+                        </div>
                     </div>
                 </div>
             </div>
