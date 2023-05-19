@@ -12,11 +12,11 @@ import { useState } from 'react'
 
 export default function Main() {
   const [pesquisa, setPesquisa] = useState('');
-  const [lista,setLista] = useState(LojasList)
+  const [lista, setLista] = useState(LojasList)
 
 
 
-  function Pesquisar(text){
+  function Pesquisar(text) {
     const lojasFiltradas = LojasList.filter(item => item.nomeFilial.includes(text))
     setLista(lojasFiltradas)
     setPesquisa(text)
@@ -39,12 +39,12 @@ export default function Main() {
             onChange={e => Pesquisar(e.target.value)}
           />
         </div>
-        <>
-          <div className='resultLojas'>
-            {/* {LojasList.map(item => <CardLojas Key={item.id} nome={item.nomeFilial} />)} */}
-            {lista.map(item => <CardLojas key={item.id} nome={item.nomeFilial} />)}
-          </div>
-        </>
+
+        <div className='resultLojas'>
+          {/* {LojasList.map(item => <CardLojas Key={item.id} nome={item.nomeFilial} />)} */}
+          {lista.map(item => <CardLojas key={item.id} nome={item.nomeFilial} />)}
+        </div>
+
       </div>
       <div className='containerCadeado'>
         <div className='containerMainPart'>
@@ -64,8 +64,14 @@ export default function Main() {
               descricao='Determine o período da pesquisa'
             />
             <div className='inputs'>
-              <InputDate />
-              <InputDate />
+              <div>
+                <p className='descricaoInputDate'>inicio</p>
+                <InputDate />
+              </div>
+              <div>
+                <p className='descricaoInputDate'>fim</p>
+                <InputDate />
+              </div>
             </div>
           </div>
         </div>

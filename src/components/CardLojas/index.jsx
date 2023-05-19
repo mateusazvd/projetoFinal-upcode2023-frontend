@@ -7,6 +7,7 @@ export default function CardLojas({nome, id, }) {
         <div className='loja' >
             <p className='nomeLoja'>{nome}</p>
             <input className='check' type="checkbox" name="" id="" />
+            
         </div>
     </div>
   )
