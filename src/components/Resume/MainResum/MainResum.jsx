@@ -12,24 +12,23 @@ import { FormContext } from "../../../Context/formPesquisaContext";
 
 
 export default function MainResume() {
-    const {Form,SetForm} = useContext(FormContext)
+    const {lojas, produtos} = useContext(FormContext)
     return (
         <>
             <div className="ResumMain">
                 <TitleCatResum />
                 <ResumRedLojas />
                 <div className="resuCardLojas">
-                    {Form.lojas.map((loja, index) => (
-                        <ResuCardLojas key={index} nomeLoja={loja.nomeFilial} />
+                    {lojas.map((id, index) => (
+                        <ResuCardLojas key={index} idLoja={id} />
                     ))}
-                    {Form.lojas}
+                    
                 </div>
                 <ResumRedProd />
                 <div className="resuCardProdutos">
-                    <ResuCardProdutos />
-                    <ResuCardProdutos />
-                    <ResuCardProdutos />
-                    <ResuCardProdutos />
+                        {produtos.map((id, index) => (
+                            <ResuCardProdutos key={index} idProduto={id} />
+                        ))}
                 </div>
 
             </div>
