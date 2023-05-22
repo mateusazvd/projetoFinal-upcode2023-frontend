@@ -8,18 +8,20 @@ import Produtos from '../Produtos'
 import DropDown from '../DropDown'
 import ProdutosList from '../../moks/produtos.json'
 import LojasList from '../../moks/lojas.json'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import { FormContext } from '../../Context/formPesquisaContext'
 
 export default function Main() {
+  const { Form, SetForm } = useContext(FormContext);
   const [pesquisa, setPesquisa] = useState('');
   const [lista, setLista] = useState(LojasList)
 
   const [pesquisaProduto, setPesquisaProduto] = useState('');
   const [listaProdutos, setListaProduto] = useState(ProdutosList)
 
-   
+
   function PesquisarProdutos(text) {
-    const produtosFilter = ProdutosList.filter(produto =>produto.nome.toLowerCase().includes(pesquisaProduto.toLowerCase())) ;
+    const produtosFilter = ProdutosList.filter(produto => produto.nome.toLowerCase().includes(pesquisaProduto.toLowerCase()));
     setListaProduto(produtosFilter)
     setPesquisaProduto(text)
 
@@ -38,6 +40,18 @@ export default function Main() {
     }
   }
 
+  function dataInicial(data) {
+    Form.dataInicio = data;
+    SetForm(Form)
+    console.log(Form.dataInicio, "Data-inicial");
+  }
+  function dataFinal(data) {
+    Form.dataFinal = data;
+    SetForm(Form)
+    console.log(Form.dataFinal, "data-final");
+
+  }
+
   return (
     <div className='containerMain'>
       <div className='containerLojas'>
@@ -46,21 +60,17 @@ export default function Main() {
             className="titleInput"
             titulo="Lojas"
             descricao="Selecione as lojas que realizarão a pesquisa"
-
-
           />
           <InputPesq
             className="inputPesq"
             placeholder='Pesquisar lojas'
             value={pesquisa}
             pesquisar={PesquisarLoja}
-
           />
-
         </div>
         <>
           <div className='resultLojas'>
-            {lista.map(item => <CardLojas key={item.codigo} nome={item.nomeFilial} id ={item.codigo} />)}
+            {lista.map(item => <CardLojas key={item.codigo} nome={item.nomeFilial} id={item.codigo} />)}
           </div>
         </>
       </div>
@@ -82,8 +92,14 @@ export default function Main() {
               descricao='Determine o período da pesquisa'
             />
             <div className='inputs'>
-              <InputDate />
-              <InputDate />
+              <div>
+                <p className='periodo'>inicio</p>
+                <InputDate mudarData={dataInicial} />
+              </div>
+              <div>
+                <p className='periodo'>fim</p>
+                <InputDate mudarData={dataFinal} />
+              </div>
             </div>
           </div>
         </div>
@@ -97,8 +113,7 @@ export default function Main() {
             tamanho="500"
             placeholder='Pesquisar produtos'
             value={pesquisaProduto}
-            pesquisar = {PesquisarProdutos}
-
+            pesquisar={PesquisarProdutos}
           />
         </div>
         <div className='va'>
@@ -106,7 +121,6 @@ export default function Main() {
           <input type="radio" id='bucarTodos' value='check' />
           <span htmlFor="bucarTodos" className='input-selecionar-todos'>Selecionar todos os produtos</span>
         </div>
-
         <div className='containerSelecProdutos'>
           <div className='listaProdutos'>
             {listaProdutos.map(item => <Produtos key={item.id} descricao={item.descricao} nome={item.nome} />)}

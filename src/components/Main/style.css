@@ -48,19 +48,15 @@ hr {
     height: 10px;
 }
 
-
-
 .lojasPesquisa{
     overflow-y: hidden;
     width: 24vw;
-    height: 50vh;
+    height: 20vh;
 }
 
 .containerLojas {
     display: flex;
     flex-direction: column;
-    
-    
 }
 
 
@@ -75,4 +71,11 @@ hr {
     text-align: center;
     font-size: 14px;
     color: #808080;
+}
+
+.periodo {
+    margin-top: .5rem;
+    font-size: 12px;
+    text-align: center;
+    color: #808080
 }
