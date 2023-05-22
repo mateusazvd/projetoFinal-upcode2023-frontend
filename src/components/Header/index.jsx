@@ -1,13 +1,14 @@
-import { useContext } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { FormContext } from '../../Context/formPesquisaContext'
 import './style.css'
 
 export default function Header() {
-    const nome = useContext(FormContext)
+    const { Form,teste,lojas,setLojas } = useContext(FormContext)
+
 
     return (
         <div className='corDeFundo'>
-            
-        </div> 
+            {lojas}
+        </div>
     )
 }
