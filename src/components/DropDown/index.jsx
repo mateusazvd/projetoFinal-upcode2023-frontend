@@ -17,10 +17,10 @@ export default function DropDown() {
     <div className='containerDropDown'>
       <select className='dropDown'  onChange={handleDropDownChange}>
         <option className='itemDropDown' value="rx">RX</option>
-        <option className='itemDropDown' value="ifantil">INFANTIL</option>
+        <option className='itemDropDown' value="infantil">INFANTIL</option>
         <option className='itemDropDown' value="genericos">GENERICOS</option>
         <option className='itemDropDown' value="hb">HB</option>
-        <option className='itemDropDown' value="rx">MARCA PROPRIA</option>
+        <option className='itemDropDown' value="marcapropria">MARCA PROPRIA</option>
       </select>
     </div>
   )

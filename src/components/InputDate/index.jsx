@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import './style.css';
 
 export default function InputDate({ mudarData }) {
-  const [data, setData] = useState(''); 
-  
+  const [data, setData] = useState('');
+
   return (
     <div className='containerInputDate'>
       <input

@@ -15,6 +15,11 @@
 
 .check {
     margin-left: 12rem;
+    cursor: pointer;
+}
+
+.check:checked {
+    background-color: blue;
 }
 
 .resultLoja {
@@ -31,4 +36,8 @@
 .resultLojas::-webkit-scrollbar-thumb {
     background: var(--cor-header-color);
     height: 10px;
+}
+
+.resultLojas {
+    height: 100vh;
 }

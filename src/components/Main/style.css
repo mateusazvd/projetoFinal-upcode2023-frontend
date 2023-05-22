@@ -5,10 +5,10 @@
 .containerMain {
     background-color: #ffffff;
     width: 90vw;
-    height: 100vh;
+    height: 57rem;
     margin: 2rem auto;
     border-radius: 10px;
-    padding: 1rem 2rem ;
+    padding: 3rem 2rem ;
     display: flex;
     column-gap: 10rem;
 }
@@ -35,7 +35,7 @@ hr {
 }
 
 .listaProdutos {
-    height: 45vh;
+    height: 30rem;
     width: 40vw;
 }
 .listaProdutos::-webkit-scrollbar{
@@ -48,18 +48,15 @@ hr {
     height: 10px;
 }
 
-
-
 .lojasPesquisa{
     overflow-y: hidden;
     width: 24vw;
+    height: 20vh;
 }
 
 .containerLojas {
     display: flex;
     flex-direction: column;
-    height: 85vh;
-    row-gap: 1rem;
 }
 
 
@@ -67,11 +64,18 @@ hr {
     margin-left: 10px;
 }
 
-.resultLojas{
-    margin-top: -60px;
-    height: 60vh;
+/* descrição input  */
+
+.descricaoInputDate {
+    padding-top: 0.5rem;
+    text-align: center;
+    font-size: 14px;
+    color: #808080;
 }
 
-
-
-
+.periodo {
+    margin-top: .5rem;
+    font-size: 12px;
+    text-align: center;
+    color: #808080
+}

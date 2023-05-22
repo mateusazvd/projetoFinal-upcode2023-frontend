@@ -2,7 +2,6 @@ import { useContext } from 'react'
 import { FormContext } from '../../Context/formPesquisaContext'
 import './style.css'
 import LojasList from '../../moks/lojas.json'
-import { useState } from 'react'
   
 export default function CardLojas({nome, id }) {
   const {Form,SetForm} = useContext(FormContext)
@@ -43,7 +42,8 @@ export default function CardLojas({nome, id }) {
     <div className='containerLoja' id={id}>
         <div className='loja' >
             <p className='nomeLoja'>{nome}</p>
-            <input className='check' type="checkbox" name="" id="" onClick={()=> AdicionaLojaNoForm(!checked)} />
+            <input className='check' type="checkbox" name="" id=""  onClick={()=> AdicionaLojaNoForm()}/>
+            
         </div>
     </div>
   )
