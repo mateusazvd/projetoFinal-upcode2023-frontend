@@ -9,6 +9,7 @@ import ResuCardProdutos from "../ResuCardProdutos/ResuCardProdutos";
 
 
 export default function MainResume() {
+
     return (
         <>
             <div className="ResumMain">
@@ -25,7 +26,6 @@ export default function MainResume() {
                     <ResuCardProdutos />
                     <ResuCardProdutos />
                     <ResuCardProdutos />
-          
                 </div>
                     
             </div>
