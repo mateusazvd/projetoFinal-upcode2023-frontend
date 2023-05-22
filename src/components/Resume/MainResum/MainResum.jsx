@@ -10,9 +10,9 @@ import { useContext } from "react";
 import { FormContext } from "../../../Context/formPesquisaContext";
 
 
-
 export default function MainResume() {
-    const {lojas, produtos} = useContext(FormContext)
+    const {lojas, produtos, setLojas} = useContext(FormContext)
+    
     return (
         <>
             <div className="ResumMain">
@@ -27,7 +27,7 @@ export default function MainResume() {
                 <ResumRedProd />
                 <div className="resuCardProdutos">
                         {produtos.map((id, index) => (
-                            <ResuCardProdutos key={index} idProduto={id} />
+                            <ResuCardProdutos key={index} idProduto={id} teste={setLojas}/>
                         ))}
                 </div>
 

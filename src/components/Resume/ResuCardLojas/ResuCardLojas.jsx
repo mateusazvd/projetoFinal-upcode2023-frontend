@@ -4,20 +4,30 @@ import { CiCircleRemove } from 'react-icons/ci'
 import todasLojas from "../../../moks/lojas.json"
 import { FormContext } from '../../../Context/formPesquisaContext'
 
-export default function ResuCardLojas({ idLoja }) {
-    //const {lojas,setLojas} = useContext(FormContext)
+export default function ResuCardLojas({idLoja}) {
+    const { lojas, setLojas } = useContext(FormContext)
     const [lojaSelecionada, setLojaSelecionada] = useState()
 
-    useEffect(() => {
-        // receber um id e retornar uma loja com o id passado 
+
+    function Filtrar(){
         let result = todasLojas.filter(x => x.codigo == idLoja)
-        setLojaSelecionada(result[0].nomeFilial)
-    }, [])
+        return result[0].nomeFilial
+    }
+
+    function removerItem(t, item) {
+        const index = t.indexOf(item);
+        if (index > -1) {
+            t.splice(index, 1);
+        }
+        
+        setLojas([...t])
+    }
+
 
     return (
         <div className='containerCardLojas'>
-            <p className='itemCardLojas'>{lojaSelecionada}</p>
-            <CiCircleRemove className='iconRemove' />
+            <p className='itemCardLojas'>{Filtrar()}</p>
+            <CiCircleRemove className='iconRemove' onClick={()=> removerItem(lojas,idLoja)}/>
         </div>
     )
 }
