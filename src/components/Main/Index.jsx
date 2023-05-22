@@ -35,8 +35,8 @@ export default function Main() {
     setLista(lojasFiltradas)
     setPesquisa(text)
 
-    if (text.length == 0) {
-      setLista(LojasList)
+    if (text.length === 0) {
+      setLista(LojasList);
     }
   }
 
@@ -70,7 +70,7 @@ export default function Main() {
         </div>
         <>
           <div className='resultLojas'>
-            {lista.map(item => <CardLojas key={item.codigo} nome={item.nomeFilial} id={item.codigo} />)}
+            {lista.length > 0 ? lista.map(item => <CardLojas key={item.codigo} nome={item.nomeFilial} id={item.codigo} />) : "Loja não encontrada."}
           </div>
         </>
       </div>
@@ -123,7 +123,10 @@ export default function Main() {
         </div>
         <div className='containerSelecProdutos'>
           <div className='listaProdutos'>
-            {listaProdutos.map(item => <Produtos key={item.id} descricao={item.descricao} nome={item.nome} />)}
+            {listaProdutos.length > 0 ? listaProdutos.map(item => <Produtos key={item.id} descricao={item.descricao} nome={item.nome} />) : "Produto não encontrado."}
+
+
+
           </div>
         </div>
       </div>

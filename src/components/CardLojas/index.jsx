@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import { FormContext } from '../../Context/formPesquisaContext'
 import './style.css'
+import { useState } from 'react'
 import LojasList from '../../moks/lojas.json'
   
 export default function CardLojas({nome, id }) {

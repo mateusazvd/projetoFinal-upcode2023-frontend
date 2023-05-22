@@ -8,7 +8,7 @@ export default function InputDate({ mudarData }) {
     <div className='containerInputDate'>
       <input
         className='inputCampo'
-        type="date"
+        type='date'
         value={data}
         onChange={e => mudarData(e.target.value)}
       />

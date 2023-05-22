@@ -2,6 +2,7 @@ import React from 'react'
 import './ResuCardLojas.css'
 import { CiCircleRemove } from 'react-icons/ci'
 
+
 export default function ResuCardLojas({nomeLoja}) {
     return (
         <div className='containerCardLojas'>
