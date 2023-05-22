@@ -2,10 +2,10 @@ import React from 'react'
 import './ResuCardLojas.css'
 import { CiCircleRemove } from 'react-icons/ci'
 
-export default function ResuCardLojas() {
+export default function ResuCardLojas({nomeLoja}) {
     return (
         <div className='containerCardLojas'>
-            <p className='itemCardLojas'>Loja</p>
+            <p className='itemCardLojas'>{nomeLoja}</p>
             <CiCircleRemove className='iconRemove' />
         </div>
     )
