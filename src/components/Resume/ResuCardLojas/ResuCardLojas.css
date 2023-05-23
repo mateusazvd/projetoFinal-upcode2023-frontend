@@ -15,7 +15,8 @@
 
 .iconRemove {
     cursor: pointer;
-    color: rgb(255, 0, 8);
+    font-size: 27px;
+    color: rgba(255, 0, 8, 0.733);
 }
 
 .itemCardLojas{
