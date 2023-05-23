@@ -4,7 +4,7 @@ import './style.css'
 
 export default function DropDown() {
   const { setCategoria } = useContext(FormContext);
- 
+
 
   const handleDropDownChange = (event) => {
     const newValue = event.target.value;
@@ -13,14 +13,15 @@ export default function DropDown() {
 
   return (
     <div className='containerDropDown'>
-      <select className='dropDown'  onChange={handleDropDownChange}>
-        <option className='itemDropDown' value="rx">RX</option>
-        <option className='itemDropDown' value="infantil">INFANTIL</option>
-        <option className='itemDropDown' value="genericos">GENERICOS</option>
-        <option className='itemDropDown' value="hb">HB</option>
-        <option className='itemDropDown' value="marcapropria">MARCA PROPRIA</option>
+      <select className='dropDown' onChange={handleDropDownChange}>
+        <option className='itemDropDown' value=""></option>
+        <option className='itemDropDown' value="RX Marca">RX Marca</option>
+        <option className='itemDropDown' value="RX Generico">RX Generico</option>
+        <option className='itemDropDown' value="OTC">OTC</option>
+        <option className='itemDropDown' value="Marca Propria">Marca Propria</option>
       </select>
     </div>
   )
-
 }
+// promocional : rx marca rx generico
+// pague leve : otc e marca propria 

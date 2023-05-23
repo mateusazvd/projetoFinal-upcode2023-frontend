@@ -3,7 +3,7 @@ import './ResuCardProdutos.css'
 import {CiCircleRemove} from 'react-icons/ci'
 import { FormContext } from '../../../Context/formPesquisaContext'
 import todosProdutos from '../../../moks/produtos.json'
-
+import listProdutos from "../../../moks/produtos.json"
 export default function ResuCardProdutos({idProdutos}) {
   const {produtos, setProdutos} = useContext(FormContext)
 
@@ -13,9 +13,15 @@ export default function ResuCardProdutos({idProdutos}) {
   }
 
 
+  function pegarProdutoPorCodigo(){
+    let result = listProdutos.filter(item => item.id == idProdutos  )
+    return result[0]
+  }
+
+
   return (
     <div className='containerCardProdutos'>
-        <p className='itemCardProdutos'>{idProdutos}</p>
+        <p className='itemCardProdutos'>{pegarProdutoPorCodigo().nome}</p>
         <CiCircleRemove  className='iconRemovePro'/>
     </div>
   )

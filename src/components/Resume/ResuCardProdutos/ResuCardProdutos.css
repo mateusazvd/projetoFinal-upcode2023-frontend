@@ -17,3 +17,9 @@
     cursor: pointer;
     color: rgba(237, 28, 35, 0.75);
 }
+
+
+.itemCardProdutos{
+    font-size: 14px;
+    color: rgb(87, 87, 87);
+}

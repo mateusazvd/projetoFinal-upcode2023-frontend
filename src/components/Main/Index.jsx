@@ -13,13 +13,16 @@ import { FormContext } from '../../Context/formPesquisaContext'
 
 export default function Main() {
 
-  const {setDataFinal,setDataInicio } = useContext(FormContext);
+  const {setDataFinal,setDataInicio,categoria} = useContext(FormContext);
   const [pesquisa, setPesquisa] = useState('');
   const [lista, setLista] = useState(LojasList)
   const [pesquisaProduto, setPesquisaProduto] = useState('');
   const [listaProdutos, setListaProduto] = useState(ProdutosList)
 
 
+  function FiltrarProdutoPorCategoria(valor){
+      let listaFiltrada = ProdutosList.filter(item=> item.categoria == valor)
+  }
 
   function PesquisarProdutos(text) {
     const produtosFilter = ProdutosList.filter(produto => produto.nome.toLowerCase().includes(pesquisaProduto.toLowerCase()));
@@ -121,10 +124,7 @@ export default function Main() {
         </div>
         <div className='containerSelecProdutos'>
           <div className='listaProdutos'>
-            {listaProdutos.length > 0 ? listaProdutos.map(item => <Produtos key={item.id} descricao={item.descricao} nome={item.nome} />) : "Produto não encontrado."}
-
-
-
+            {listaProdutos.length > 0 ? listaProdutos.map(item => <Produtos key={item.id} descricao={item.descricao} nome={item.nome} id = {item.id}/>) : "Produto não encontrado."}
           </div>
         </div>
       </div>

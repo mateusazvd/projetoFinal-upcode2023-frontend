@@ -5,15 +5,20 @@ import './style.css'
 import LojasList from '../../moks/lojas.json'
   
 export default function  CardLojas({nome, id}) {
-  const {Form,SetForm,lojas,setLojas} = useContext(FormContext)
+  const {lojas,setLojas} = useContext(FormContext)
 
   const [checked, setChecked] =useState(false)
 
+  useEffect(()=>{
+    VerificarSeExiste()
+  },[])
 
+  
   //precisa retornar se a loja do card existe ou não no form
   function VerificarSeExiste(){
-    setChecked(Form.lojas.contains(id))
-    setChecked(true)
+    if(lojas.includes(id)){
+      setChecked(true)
+    }
   }
 
   /// remove item de um array função generica
@@ -35,14 +40,13 @@ export default function  CardLojas({nome, id}) {
       LojasList = [...lojas]
       setLojas(LojasList)
     }
-    console.log(Form.lojas)
   }
 
   return (
     <div className='containerLoja' id={id}>
         <div className='loja' >
             <p className='nomeLoja'>{nome}</p>
-            <input className='check' type="checkbox" name="" id=""  onClick={()=> AdicionaLojaNoForm()}/>
+            <input className='check' type="checkbox" name="" id=""  onClick={()=> AdicionaLojaNoForm()} checked = {checked}/>
             
         </div>
     </div>
