@@ -37,12 +37,14 @@ export default function TitleCatResum() {
                         </h3>
                         <div className="resultPeriodo">
                             <p className="resultPeriodoInput">{FormatarData(dataInicio)}</p>
+                            <p className="resultPeriodoInput"></p>
                         </div>
 
                         <p className="separadorDate">até</p>
 
                         <div className="resultPeriodo">
                             <p className="resultPeriodoInput">{FormatarData(dataFinal)}</p>
+                            <p className="resultPeriodoInput"></p>
                         </div>
                     </div>
                 </div>

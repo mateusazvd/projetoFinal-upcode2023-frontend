@@ -4,7 +4,7 @@ import { FormContext } from '../../Context/formPesquisaContext'
 import './style.css'
 import LojasList from '../../moks/lojas.json'
   
-export default function CardLojas({nome, id }) {
+export default function  CardLojas({nome, id}) {
   const {Form,SetForm,lojas,setLojas} = useContext(FormContext)
 
   const [checked, setChecked] =useState(false)

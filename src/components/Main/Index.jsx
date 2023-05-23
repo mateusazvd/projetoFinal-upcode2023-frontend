@@ -39,6 +39,7 @@ export default function Main() {
     if (text.length === 0) {
       setLista(LojasList);
     }
+    
   }
 
   function dataInicial(data) {
