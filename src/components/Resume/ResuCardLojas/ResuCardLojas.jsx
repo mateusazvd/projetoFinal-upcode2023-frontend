@@ -23,7 +23,6 @@ export default function ResuCardLojas({idLoja}) {
         setLojas([...t])
     }
 
-
     return (
         <div className='containerCardLojas'>
             <p className='itemCardLojas'>{Filtrar()}</p>
