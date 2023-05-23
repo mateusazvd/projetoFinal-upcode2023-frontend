@@ -1,0 +1,3 @@
+---- Tratamento de erros -----
+
+- checar se a data de inicio é menor que a data final

@@ -13,7 +13,6 @@ export default function ResuCardLojas({idLoja}) {
         let result = todasLojas.filter(x => x.codigo == idLoja)
         return result[0].nomeFilial
     }
-
     function removerItem(t, item) {
         const index = t.indexOf(item);
         if (index > -1) {

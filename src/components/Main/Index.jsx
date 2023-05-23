@@ -12,12 +12,14 @@ import { useState, useContext } from 'react'
 import { FormContext } from '../../Context/formPesquisaContext'
 
 export default function Main() {
-  const {Form, SetForm } = useContext(FormContext);
+
+  const {setDataFinal,setDataInicio } = useContext(FormContext);
   const [pesquisa, setPesquisa] = useState('');
   const [lista, setLista] = useState(LojasList)
-
   const [pesquisaProduto, setPesquisaProduto] = useState('');
   const [listaProdutos, setListaProduto] = useState(ProdutosList)
+
+
 
   function PesquisarProdutos(text) {
     const produtosFilter = ProdutosList.filter(produto => produto.nome.toLowerCase().includes(pesquisaProduto.toLowerCase()));
@@ -40,14 +42,10 @@ export default function Main() {
   }
 
   function dataInicial(data) {
-    Form.dataInicio = data;
-    SetForm(Form)
-    console.log(Form.dataInicio, "Data-inicial");
+    setDataInicio(data)
   }
   function dataFinal(data) {
-    Form.dataFinal = data;
-    SetForm(Form)
-    console.log(Form.dataFinal, "data-final");
+    setDataFinal(data)
 
   }
 

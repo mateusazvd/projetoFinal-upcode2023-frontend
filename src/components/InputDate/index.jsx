@@ -6,13 +6,18 @@ export default function InputDate({ mudarData }) {
   const {setTeste} = useContext(FormContext)
   const [data, setData] = useState('');
 
+  function atualizaData(data){
+    mudarData(data)
+    setData(data)
+  }
+
   return (
     <div className='containerInputDate'>
       <input
         className='inputCampo'
         type='date'
         value={data}
-        onChange={(e) => { mudarData(e.target.value)}}
+        onChange={(e) => { atualizaData(e.target.value)}}
       />
     </div>
   );
