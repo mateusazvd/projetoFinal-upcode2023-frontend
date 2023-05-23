@@ -28,7 +28,7 @@ export default function MainResume() {
                 <ResumRedProd />
                     <div className="resuCardProdutos">
                             {produtos.map((id, index) => (
-                                <ResuCardProdutos key={index} idProduto={id} />
+                                <ResuCardProdutos key={index} idProdutos={id} />
                             ))}
                 </div>
 
