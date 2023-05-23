@@ -12,8 +12,8 @@ import Button from '../../Button'
 
 
 export default function MainResume() {
-    const {lojas, produtos, setLojas} = useContext(FormContext)
-    
+    const { lojas, produtos, setLojas } = useContext(FormContext)
+
     return (
         <>
             <div className="ResumMain">
@@ -23,20 +23,20 @@ export default function MainResume() {
                     {lojas.map((id, index) => (
                         <ResuCardLojas key={index} idLoja={id} />
                     ))}
-                    
+
                 </div>
                 <ResumRedProd />
-                    <div className="resuCardProdutos">
-                            {produtos.map((id, index) => (
-                                <ResuCardProdutos key={index} idProdutos={id} />
-                            ))}
+                <div className="resuCardProdutos">
+                    {produtos.map((id, index) => (
+                        <ResuCardProdutos key={index} idProdutos={id} />
+                    ))}
                 </div>
+                <div className="divButton">
 
+                    <Button />
+                </div>
             </div>
-            <div className="divButton">
 
-            <Button />
-            </div>
         </>
     )
 }

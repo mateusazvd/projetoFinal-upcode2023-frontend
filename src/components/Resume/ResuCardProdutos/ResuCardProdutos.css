@@ -15,5 +15,6 @@
 
 .iconRemovePro {
     cursor: pointer;
-    color: rgba(237, 28, 35, 0.75);
+    font-size: 27px;
+    color: rgba(255, 0, 8, 0.733);
 }

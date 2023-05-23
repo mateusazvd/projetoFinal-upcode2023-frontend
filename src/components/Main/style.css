@@ -11,11 +11,12 @@
     padding: 3rem 2rem ;
     display: flex;
     column-gap: 10rem;
+    justify-content: space-between;
 }
 
 .containerMainPart {
     display: flex;
-    column-gap: 6rem;
+    column-gap: 3rem;
 }
 .containerCadeado {
     display: flex;
@@ -50,7 +51,7 @@ hr {
 
 .lojasPesquisa{
     overflow-y: hidden;
-    width: 24vw;
+    width: 30vw;
     height: 20vh;
 }
 
@@ -58,7 +59,6 @@ hr {
     display: flex;
     flex-direction: column;
 }
-
 
 .input-selecionar-todos{
     margin-left: 10px;

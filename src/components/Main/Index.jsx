@@ -124,9 +124,6 @@ export default function Main() {
         <div className='containerSelecProdutos'>
           <div className='listaProdutos'>
             {listaProdutos.length > 0 ? listaProdutos.map(item => <Produtos key={item.id} descricao={item.descricao} nome={item.nome} />) : "Produto não encontrado."}
-
-
-
           </div>
         </div>
       </div>
