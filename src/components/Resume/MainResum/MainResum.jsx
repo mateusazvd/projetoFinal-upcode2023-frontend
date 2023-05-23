@@ -6,6 +6,7 @@ import ResumRedLojas from '../ResumRedLojas/ResumRedLojas'
 import ResumRedProd from '../ResumRedProd/ResumRedProd'
 import ResuCardLojas from "../ResuCardLojas/ResuCardLojas";
 import ResuCardProdutos from "../ResuCardProdutos/ResuCardProdutos";
+import Button from "../../Button";
 
 
 export default function MainResume() {
@@ -25,9 +26,12 @@ export default function MainResume() {
                     <ResuCardProdutos />
                     <ResuCardProdutos />
                     <ResuCardProdutos />
-          
                 </div>
                     
+            </div>
+            <div className="divButton">
+
+            <Button />
             </div>
         </>
     )

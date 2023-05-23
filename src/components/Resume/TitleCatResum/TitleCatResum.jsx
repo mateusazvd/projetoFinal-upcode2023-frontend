@@ -23,13 +23,13 @@ export default function TitleCatResum() {
                             Perído:
                         </h3>
                         <div className="resultPeriodo">
-                            <input className="resultPeriodoInput" type="date" name="" id="" />
+                            <p className="resultPeriodoInput"></p>
                         </div>
 
                         <p className="separadorDate">até</p>
 
                         <div className="resultPeriodo">
-                            <input className="resultPeriodoInput" type="date" name="" id="" />
+                            <p className="resultPeriodoInput"></p>
                         </div>
                     </div>
                 </div>
