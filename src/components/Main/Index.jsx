@@ -20,12 +20,22 @@ export default function Main() {
   const [listaProdutos, setListaProduto] = useState(ProdutosList)
 
 
+  useEffect(()=>{
+    FiltrarProdutoPorCategoria(categoria)
+  },[categoria])
+
   function FiltrarProdutoPorCategoria(valor){
+    if(categoria?.length>0){    
       let listaFiltrada = ProdutosList.filter(item=> item.categoria == valor)
+      setListaProduto([...listaFiltrada])
+    }
+    else{
+      setListaProduto(ProdutosList)
+    }
   }
 
   function PesquisarProdutos(text) {
-    const produtosFilter = ProdutosList.filter(produto => produto.nome.toLowerCase().includes(pesquisaProduto.toLowerCase()));
+    const produtosFilter = listaProdutos.filter(produto => produto.nome.toLowerCase().includes(pesquisaProduto.toLowerCase()));
     setListaProduto(produtosFilter)
     setPesquisaProduto(text)
 
