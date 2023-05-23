@@ -17,8 +17,6 @@ export default function Produtos({nome, id, descricao}) {
         }
     }
 
-
-
     return (
         <div className='containerProdutosCom' id={id}>
             <div className='produto'>

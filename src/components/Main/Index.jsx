@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './style.css'
 import Title from '../Title'
 import InputPesq from '../InputPesq'
@@ -12,13 +12,12 @@ import { useState, useContext } from 'react'
 import { FormContext } from '../../Context/formPesquisaContext'
 
 export default function Main() {
-  const { Form, SetForm } = useContext(FormContext);
+  const {Form, SetForm } = useContext(FormContext);
   const [pesquisa, setPesquisa] = useState('');
   const [lista, setLista] = useState(LojasList)
 
   const [pesquisaProduto, setPesquisaProduto] = useState('');
   const [listaProdutos, setListaProduto] = useState(ProdutosList)
-
 
   function PesquisarProdutos(text) {
     const produtosFilter = ProdutosList.filter(produto => produto.nome.toLowerCase().includes(pesquisaProduto.toLowerCase()));
@@ -35,8 +34,8 @@ export default function Main() {
     setLista(lojasFiltradas)
     setPesquisa(text)
 
-    if (text.length == 0) {
-      setLista(LojasList)
+    if (text.length === 0) {
+      setLista(LojasList);
     }
     
   }
@@ -71,7 +70,7 @@ export default function Main() {
         </div>
         <>
           <div className='resultLojas'>
-            {lista.map(item => <CardLojas key={item.codigo} nome={item.nomeFilial} id={item.codigo} />)}
+            {lista.length > 0 ? lista.map(item => <CardLojas key={item.codigo} nome={item.nomeFilial} id={item.codigo} />) : "Loja não encontrada."}
           </div>
         </>
       </div>
@@ -124,7 +123,10 @@ export default function Main() {
         </div>
         <div className='containerSelecProdutos'>
           <div className='listaProdutos'>
-            {listaProdutos.map(item => <Produtos key={item.id} descricao={item.descricao} nome={item.nome} />)}
+            {listaProdutos.length > 0 ? listaProdutos.map(item => <Produtos key={item.id} descricao={item.descricao} nome={item.nome} />) : "Produto não encontrado."}
+
+
+
           </div>
         </div>
       </div>

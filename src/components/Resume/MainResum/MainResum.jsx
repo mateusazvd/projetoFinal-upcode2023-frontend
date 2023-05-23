@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import '../../../App.css'
 import './MainResum.css'
 import TitleCatResum from '../TitleCatResum/TitleCatResum'
@@ -6,28 +6,31 @@ import ResumRedLojas from '../ResumRedLojas/ResumRedLojas'
 import ResumRedProd from '../ResumRedProd/ResumRedProd'
 import ResuCardLojas from "../ResuCardLojas/ResuCardLojas";
 import ResuCardProdutos from "../ResuCardProdutos/ResuCardProdutos";
-import Button from "../../Button";
+import { useContext } from "react";
+import { FormContext } from "../../../Context/formPesquisaContext";
 
 
 export default function MainResume() {
+    const {lojas, produtos, setLojas} = useContext(FormContext)
+    
     return (
         <>
             <div className="ResumMain">
                 <TitleCatResum />
                 <ResumRedLojas />
                 <div className="resuCardLojas">
-                    <ResuCardLojas />
-                    <ResuCardLojas />
-                    <ResuCardLojas />
+                    {lojas.map((id, index) => (
+                        <ResuCardLojas key={index} idLoja={id} />
+                    ))}
+                    
                 </div>
                 <ResumRedProd />
                 <div className="resuCardProdutos">
-                    <ResuCardProdutos />
-                    <ResuCardProdutos />
-                    <ResuCardProdutos />
-                    <ResuCardProdutos />
+                        {produtos.map((id, index) => (
+                            <ResuCardProdutos key={index} idProduto={id} teste={setLojas}/>
+                        ))}
                 </div>
-                    
+
             </div>
             <div className="divButton">
 

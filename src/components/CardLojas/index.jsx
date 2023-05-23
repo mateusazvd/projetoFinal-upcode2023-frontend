@@ -1,13 +1,12 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useContext } from 'react'
 import { FormContext } from '../../Context/formPesquisaContext'
 import './style.css'
 import LojasList from '../../moks/lojas.json'
   
 export default function CardLojas({nome, id }) {
-  const {Form,SetForm} = useContext(FormContext)
+  const {Form,SetForm,lojas,setLojas} = useContext(FormContext)
 
-  
   const [checked, setChecked] =useState(false)
 
 
@@ -28,22 +27,22 @@ export default function CardLojas({nome, id }) {
   function AdicionaLojaNoForm(){
     setChecked(!checked)
     if(!checked){
-      Form.lojas = [id,...Form.lojas]
-      SetForm(Form)
+      LojasList = [id,...lojas]
+      setLojas(LojasList)
     }
     else{
-      removerItem(Form.lojas,id)
-      setChecked(Form)
+      removerItem(lojas,id)
+      LojasList = [...lojas]
+      setLojas(LojasList)
     }
     console.log(Form.lojas)
   }
-
 
   return (
     <div className='containerLoja' id={id}>
         <div className='loja' >
             <p className='nomeLoja'>{nome}</p>
-            <input className='check' type="checkbox" name="" id="" />
+            <input className='check' type="checkbox" name="" id=""  onClick={()=> AdicionaLojaNoForm()}/>
             
         </div>
     </div>
