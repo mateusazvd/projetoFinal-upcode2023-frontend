@@ -13,23 +13,30 @@ import { FormContext } from '../../Context/formPesquisaContext'
 
 export default function Main() {
 
-  const {setDataFinal,setDataInicio,categoria} = useContext(FormContext);
+  const { setDataFinal, setDataInicio, categoria, produtos, setProdutos } = useContext(FormContext);
   const [pesquisa, setPesquisa] = useState('');
   const [lista, setLista] = useState(LojasList)
   const [pesquisaProduto, setPesquisaProduto] = useState('');
   const [listaProdutos, setListaProduto] = useState(ProdutosList)
 
+  const [selectAlChecked, setSelectAllChecked] = useState(false)
 
-  useEffect(()=>{
+
+
+  useEffect(() => {
+    if(selectAlChecked){
+      let tempListaProdutosiD = listaProdutos.map(item => item.id)
+      setProdutos([...tempListaProdutosiD]);
+    }
     FiltrarProdutoPorCategoria(categoria)
-  },[categoria])
+  }, [categoria, selectAlChecked])
 
-  function FiltrarProdutoPorCategoria(valor){
-    if(categoria?.length>0){    
-      let listaFiltrada = ProdutosList.filter(item=> item.categoria == valor)
+  function FiltrarProdutoPorCategoria(valor) {
+    if (categoria?.length > 0) {
+      let listaFiltrada = ProdutosList.filter(item => item.categoria == valor)
       setListaProduto([...listaFiltrada])
     }
-    else{
+    else {
       setListaProduto(ProdutosList)
     }
   }
@@ -52,7 +59,7 @@ export default function Main() {
     if (text.length === 0) {
       setLista(LojasList);
     }
-    
+
   }
 
   function dataInicial(data) {
@@ -129,12 +136,15 @@ export default function Main() {
         </div>
         <div className='va'>
           {/* Input único de marcação */}
-          <input type="radio" id='bucarTodos' value='check' />
+          <input type="checkbox"
+            id='bucarTodos'
+            value='check'
+            onClick={() => setSelectAllChecked(!selectAlChecked)} />
           <span htmlFor="bucarTodos" className='input-selecionar-todos'>Selecionar todos os produtos</span>
         </div>
         <div className='containerSelecProdutos'>
           <div className='listaProdutos'>
-            {listaProdutos.length > 0 ? listaProdutos.map(item => <Produtos key={item.id} descricao={item.descricao} nome={item.nome} id = {item.id}/>) : "Produto não encontrado."}
+            {listaProdutos.length > 0 ? listaProdutos.map(item => <Produtos key={item.id} descricao={item.descricao} nome={item.nome} id={item.id} />) : "Produto não encontrado."}
           </div>
         </div>
       </div>

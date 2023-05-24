@@ -3,12 +3,13 @@ import { FormContext } from '../../Context/formPesquisaContext';
 import './style.css'
 
 export default function DropDown() {
-  const { setCategoria } = useContext(FormContext);
+  const { setCategoria,produtos,setProdutos} = useContext(FormContext);
 
 
   const handleDropDownChange = (event) => {
     const newValue = event.target.value;
     setCategoria(newValue)
+    setProdutos([])
   };
 
   return (

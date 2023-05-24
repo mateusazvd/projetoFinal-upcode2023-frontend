@@ -7,6 +7,7 @@
     justify-content: space-between;
     height: 8vh;
     width: 27vw;
+    overflow-y: hidden;
 }
 
 .containerCardProdutos:hover {
@@ -16,11 +17,14 @@
 .iconRemovePro {
     cursor: pointer;
     font-size: 27px;
+    padding: auto;
     color: rgba(255, 0, 8, 0.733);
+    scroll-snap-type: inherit;
 }
 
 
 .itemCardProdutos{
+    width: 22rem;
     font-size: 14px;
     color: rgb(87, 87, 87);
 }
