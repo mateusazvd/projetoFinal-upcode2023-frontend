@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { FormContext } from '../../Context/formPesquisaContext'
 import './style.css'
 import ProdutosList from '../../moks/produtos.json'
@@ -7,6 +7,12 @@ export default function Produtos({ nome, id, descricao }) {
     const { produtos, setProdutos } = useContext(FormContext)
     const [texto, setTexto] = useState(false)
     const [checked, setChecked] = useState(false)
+
+    useEffect(() => {
+        if(produtos.includes(id)){
+            setChecked(true)
+        }
+    },[produtos])
 
     function verMais() {
         return descricao
@@ -47,7 +53,7 @@ export default function Produtos({ nome, id, descricao }) {
                 <p className='nomeProduto'>{nome}</p>
                 <p title={descricao} className='descricaoProduto' onClick={() => setTexto(!texto)}>{texto ? verMais() : limitarTexto(descricao, 80)}</p>
             </div>
-            <input className='check' type="checkbox" onClick={() => AdicionarProdForm()} />
+            <input className='check' type="checkbox" onClick={() => AdicionarProdForm()} checked={checked}/>
         </div>
     )
 }
