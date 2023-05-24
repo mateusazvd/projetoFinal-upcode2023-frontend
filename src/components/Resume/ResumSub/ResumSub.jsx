@@ -5,11 +5,10 @@ import "./ResumSub.css"
 export default function ResumSub(){
     
     return (
-        <>
-            <div>
-                <div className="btn-area">
-                </div>
+        <div>
+            <div >
+                <button />
             </div>
-        </>
+        </div>
     )
 }
