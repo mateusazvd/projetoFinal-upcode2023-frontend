@@ -20,7 +20,6 @@ export default function  CardLojas({nome, id}) {
       setChecked(true)
     }
   }
-
   /// remove item de um array função generica
   function removerItem(array, item) {
     const index = array.indexOf(item);
@@ -28,7 +27,6 @@ export default function  CardLojas({nome, id}) {
       array.splice(index, 1);
     }
   }
-
   function AdicionaLojaNoForm(){
     setChecked(!checked)
     if(!checked){
@@ -41,7 +39,6 @@ export default function  CardLojas({nome, id}) {
       setLojas(LojasList)
     }
   }
-
   return (
     <div className='containerLoja' id={id}>
         <div className='loja' >

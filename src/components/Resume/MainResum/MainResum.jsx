@@ -32,7 +32,6 @@ export default function MainResume() {
                     ))}
                 </div>
                 <div className="divButton">
-
                     <Button />
                 </div>
             </div>
