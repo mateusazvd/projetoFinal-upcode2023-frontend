@@ -3,18 +3,38 @@ import { createContext, useState } from "react";
 export const FormContext = createContext()
 
 export const FormProvider = ({children}) => {
-    const formGlobal = {
+  
+    const [Form, SetForm] = useState({
         produtos:[],
         lojas:[],
         categoria:"",
-        dataInicio:"",
+        dataInicio: "",
         dataFinal:""
-    }
+    });
 
-    const [Form, SetForm] = useState(formGlobal)
+    const [lojas,setLojas] = useState([])
+    const [produtos,setProdutos] = useState([])
+    const [categoria,setCategoria] = useState()
+    const [dataInicio,setDataInicio] = useState()
+    const [dataFinal,setDataFinal] = useState()
+
 
     return(
-        <FormContext.Provider value={{Form,SetForm}}>
+        <FormContext.Provider value={{
+            Form,
+            SetForm,
+            lojas,
+            setLojas,
+            produtos,
+            categoria,
+            dataInicio,
+            dataFinal,
+            setProdutos,
+            setCategoria,
+            setDataFinal,
+            setDataInicio
+            }}>
+                
             {children}
         </FormContext.Provider>
     )

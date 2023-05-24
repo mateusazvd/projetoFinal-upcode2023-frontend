@@ -12,7 +12,7 @@
     /* var color project */
     --cor-header-color: #0054A6;
     --cor-segundo-header-color: #0054A6;
-    --cor-tagSelecionada-color: #009fe381 (opacity 40%);
+    --cor-tagSelecionada-color: #00b3ff81 (opacity 40%);
     --cor-tagExcluir-color: #ED1C24;
     --cor-tagHouver-color: #6400a69d;
   
@@ -21,7 +21,7 @@
 .App {
     height: 100vh;
     width: 100vw;
-    background-color: #fafafa;
+    background-color: #00366d10;
 }
 input:focus {
     box-shadow: 0 0 0 0;
