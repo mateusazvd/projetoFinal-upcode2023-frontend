@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export default function Button() {
   const {
-    Form,
+   
     lojas,
     produtos,
     categoria,
@@ -19,7 +19,7 @@ export default function Button() {
 
 
   function getProdutosPorID() {
-    let newLista = produtos.map(item => ListaProdutos.filter(x => x.id == item)[0])
+    let newLista = produtos.map(item => ListaProdutos.filter(x => x.id === item)[0])
 
     // transforma o objeto nos padrõe da requisição
     let listaFinal = newLista.map(item => {
@@ -118,13 +118,13 @@ export default function Button() {
 
 
 
-    if (lojas.length == 0) {
+    if (lojas.length === 0) {
       return erroLojaVazia();
     }
     else if (categoria == 0) {
       return erroCategoriasVazia()
     }
-    else if (dataInicio == 0 || dataFinal == 0) {
+    else if (dataInicio === 0 || dataFinal === 0) {
       return NotificacaoPeriodo()
     }
     else if(dataFinal < dataInicio){  
@@ -141,7 +141,6 @@ export default function Button() {
 
       }).then(() => console.log(form, 'Cadastrado com sucesso')).catch(e => console.log(e, "erro amigao"))
     }
-
 
 
   }

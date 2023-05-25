@@ -10,6 +10,9 @@ import ProdutosList from '../../moks/produtos.json'
 import LojasList from '../../moks/lojas.json'
 import { useState, useContext } from 'react'
 import { FormContext } from '../../Context/formPesquisaContext'
+import TitlePesq from '../TitlePesq'
+import Button from '../Button'
+
 
 export default function Main() {
 
@@ -24,7 +27,7 @@ export default function Main() {
 
 
   useEffect(() => {
-    if(selectAlChecked){
+    if (selectAlChecked) {
       let tempListaProdutosiD = listaProdutos.map(item => item.id)
       setProdutos([...tempListaProdutosiD]);
     }
@@ -71,20 +74,27 @@ export default function Main() {
   }
 
   return (
+    <>
     <div className='containerMain'>
-      <div className='containerLojas'>
-        <div className='lojasPesquisa' >
-          <Title
-            className="titleInput"
-            titulo="Lojas"
-            descricao="Selecione as lojas que realizarão a pesquisa"
-          />
-          <InputPesq
-            className="inputPesq"
-            placeholder='Pesquisar lojas'
-            value={pesquisa}
-            pesquisar={PesquisarLoja}
-          />
+      <div className='containerCadeadoPri'>
+        <div>
+          <TitlePesq />
+          
+        </div>
+        <div className='containerLojas'>
+          <div className='lojasPesquisa' >
+            <Title
+              className="titleInput"
+              titulo="Lojas"
+              descricao="Selecione as lojas que realizarão a pesquisa"
+            />
+            <InputPesq
+              className="inputPesq"
+              placeholder='Pesquisar lojas'
+              value={pesquisa}
+              pesquisar={PesquisarLoja}
+            />
+          </div>
         </div>
         <>
           <div className='resultLojas'>
@@ -111,7 +121,7 @@ export default function Main() {
             />
             <div className='inputs'>
               <div>
-                <p className='periodo'>inicio</p>
+                <p className='periodo'>início</p>
                 <InputDate mudarData={dataInicial} />
               </div>
               <div>
@@ -134,20 +144,34 @@ export default function Main() {
             pesquisar={PesquisarProdutos}
           />
         </div>
-        <div className='va'>
-          {/* Input único de marcação */}
-          <input type="checkbox"
-            id='bucarTodos'
-            value='check'
-            onClick={() => setSelectAllChecked(!selectAlChecked)} />
-          <span htmlFor="bucarTodos" className='input-selecionar-todos'>Selecionar todos os produtos</span>
+        <div className='containerCheckRemoveList'>
+          <div>
+            {/* Input único de marcação */}
+            <input type="checkbox"
+              id='bucarTodos'
+              value='check'
+              onClick={() => setSelectAllChecked(!selectAlChecked)} />
+            <span htmlFor="bucarTodos" className='input-selecionar-todos'>Selecionar todos os produtos</span>
+
+          </div>
+          <div className='containerRemove'>
+            <p className='textoRemove'>Remover todos</p>
+
+          </div>
+
         </div>
         <div className='containerSelecProdutos'>
           <div className='listaProdutos'>
             {listaProdutos.length > 0 ? listaProdutos.map(item => <Produtos key={item.id} descricao={item.descricao} nome={item.nome} id={item.id} />) : "Produto não encontrado."}
           </div>
+
+          <div className='div-btn'>
+            <Button />
+          </div>
         </div>
       </div>
     </div>
+ 
+    </>
   )
 }
