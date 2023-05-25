@@ -121,10 +121,13 @@ export default function Button() {
     if (lojas.length == 0) {
       return erroLojaVazia();
     }
-    else if (categoria.value == 0) {
+    else if (categoria == 0) {
       return erroCategoriasVazia()
     }
     else if (dataInicio == 0 || dataFinal == 0) {
+      return NotificacaoPeriodo()
+    }
+    else if(dataFinal < dataInicio){  
       return NotificacaoPeriodo()
     }
     else if (produtos.length == 0) {
