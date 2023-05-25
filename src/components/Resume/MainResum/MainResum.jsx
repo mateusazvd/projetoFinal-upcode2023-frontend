@@ -9,11 +9,12 @@ import ResuCardProdutos from "../ResuCardProdutos/ResuCardProdutos";
 import { useContext } from "react";
 import { FormContext } from "../../../Context/formPesquisaContext";
 import Button from '../../Button'
+import ButtonBack from '../../buttonVoltar'
 
 
-export default function MainResume() {
-    const {lojas, produtos, setLojas} = useContext(FormContext)
-    
+export default function MainResume({setMain}) {
+    const { lojas, produtos, setLojas } = useContext(FormContext)
+
     return (
         <>
             <div className="ResumMain">
@@ -23,20 +24,22 @@ export default function MainResume() {
                     {lojas.map((id, index) => (
                         <ResuCardLojas key={index} idLoja={id} />
                     ))}
-                    
+
                 </div>
                 <ResumRedProd />
-                    <div className="resuCardProdutos">
-                            {produtos.map((id, index) => (
-                                <ResuCardProdutos key={index} idProdutos={id} />
-                            ))}
+                <div className="resuCardProdutos">
+                    {produtos.map((id, index) => (
+                        <ResuCardProdutos key={index} idProdutos={id} />
+                    ))}
                 </div>
-         <div className="divButton">
+                <div className="divButton">
+                    <ButtonBack setmain= {setMain}/>
+                    <Button setmain = {setMain}/>
 
-            <Button />
+
+                </div>
             </div>
-            </div>
-   
+
         </>
     )
 }

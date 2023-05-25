@@ -12,9 +12,10 @@ import { useState, useContext } from 'react'
 import { FormContext } from '../../Context/formPesquisaContext'
 import TitlePesq from '../TitlePesq'
 import Button from '../Button'
+import ButtonNext from '../ButtonNext'
 
 
-export default function Main() {
+export default function Main({setMain}) {
 
   const { setDataFinal, setDataInicio, categoria, produtos, setProdutos } = useContext(FormContext);
   const [pesquisa, setPesquisa] = useState('');
@@ -166,7 +167,7 @@ export default function Main() {
           </div>
 
           <div className='div-btn'>
-            <Button />
+            <ButtonNext setMain = {setMain}/>
           </div>
         </div>
       </div>
