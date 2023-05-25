@@ -14,10 +14,10 @@ export const FormProvider = ({children}) => {
 
     const [lojas,setLojas] = useState([])
     const [produtos,setProdutos] = useState([])
-    const [categoria,setCategoria] = useState()
-    const [dataInicio,setDataInicio] = useState()
-    const [dataFinal,setDataFinal] = useState()
-
+    const [categoria,setCategoria] = useState("")
+    const [dataInicio,setDataInicio] = useState("")
+    const [dataFinal,setDataFinal] = useState("")
+    const [nomePesquisa,setNomePesquisa] = useState("")
 
     return(
         <FormContext.Provider value={{
