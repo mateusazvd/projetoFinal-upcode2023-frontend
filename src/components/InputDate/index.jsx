@@ -10,6 +10,15 @@ export default function InputDate({ mudarData }) {
     mudarData(data)
     setData(data)
   }
+  function dataFormatada() {
+    var data = new Date();
+    var ano = data.getFullYear();
+    var mes = ('0' + (data.getMonth() + 1)).slice(-2);
+    var dia = ('0' + data.getDate()).slice(-2);
+    var dataFormatada = ano + '-' + mes + '-' + dia;
+
+    return dataFormatada
+  }
 
   return (
     <div className='containerInputDate'>
@@ -18,6 +27,7 @@ export default function InputDate({ mudarData }) {
         type='date'
         value={data}
         onChange={(e) => { atualizaData(e.target.value)}}
+        min = {dataFormatada()}
       />
     </div>
   );

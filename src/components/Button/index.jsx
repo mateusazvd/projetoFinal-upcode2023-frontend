@@ -2,10 +2,12 @@ import React, { useContext } from 'react'
 import { FormContext } from '../../Context/formPesquisaContext';
 import './style.css'
 import ListaProdutos from "../../moks/produtos.json"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Button() {
   const {
-    Form,
+
     lojas,
     produtos,
     categoria,
@@ -14,10 +16,8 @@ export default function Button() {
 
   } = useContext(FormContext);
 
-  
-
   function getProdutosPorID() {
-    let newLista = produtos.map(item => ListaProdutos.filter(x => x.id == item)[0])
+    let newLista = produtos.map(item => ListaProdutos.filter(x => x.id === item)[0])
 
     // transforma o objeto nos padrõe da requisição
     let listaFinal = newLista.map(item => {
@@ -45,9 +45,35 @@ export default function Button() {
     return ""
   }
 
+  function NotificacaoPeriodo() {
+    toast.warning('Preencha corretamente o período', {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    })
+  }
+
+  function NotificacaoConcluido() {
+    toast.success('Preenchido com sucesso', {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    })
+  }
+
   function PostForm() {
     let newListaProduto = getProdutosPorID()
-    let newLojas = lojas?.map(item=> item.toString())
+    let newLojas = lojas?.map(item => item.toString())
     let form = {
       "lojas": newLojas,
       "produtos": newListaProduto,
@@ -56,18 +82,22 @@ export default function Button() {
       "dataFinal": formataDataIso(dataFinal)
     }
 
-    fetch('https://api-aspnet-final-production.up.railway.app/api/pesquisa/cadastro',{
-      method:'POST',
-      headers:{'content-type': 'application/json'},
+    if (dataInicio == null || dataFinal == null) {
+      NotificacaoPeriodo()
+    }
+    
+    fetch('https://api-aspnet-final-production.up.railway.app/api/pesquisa/cadastro', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
       body: JSON.stringify(form)
 
-    }).then(()=> console.log(form,'Cadastrado com sucesso')).catch(e=> console.log(e,"erro amigao") )
-
+    }).then(() => console.log(form, 'Cadastrado com sucesso')).catch(e => console.log(e, "erro amigao"))
   }
 
   return (
     <div className='containerButton'>
       <button className='button' onClick={() => PostForm()}>Enviar</button>
+      <ToastContainer />
     </div>
   )
 }
