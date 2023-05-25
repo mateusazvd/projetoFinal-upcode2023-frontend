@@ -12,7 +12,7 @@ import Button from '../../Button'
 import ButtonBack from '../../buttonVoltar'
 
 
-export default function MainResume() {
+export default function MainResume({setMain}) {
     const { lojas, produtos, setLojas } = useContext(FormContext)
 
     return (
@@ -33,8 +33,8 @@ export default function MainResume() {
                     ))}
                 </div>
                 <div className="divButton">
-                    <ButtonBack />
-                    <Button />
+                    <ButtonBack setmain= {setMain}/>
+                    <Button setmain = {setMain}/>
 
 
                 </div>
