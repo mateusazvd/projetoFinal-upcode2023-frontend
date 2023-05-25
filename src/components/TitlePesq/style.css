@@ -3,7 +3,6 @@
     overflow-y: hidden;
     display: flex;
     flex-direction: column;
-    row-gap: 1.5rem;
     border-bottom: solid 1px;
     margin-bottom: 2.7rem;
 }
