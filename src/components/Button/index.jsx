@@ -2,6 +2,8 @@ import React, { useContext } from 'react'
 import { FormContext } from '../../Context/formPesquisaContext';
 import './style.css'
 import ListaProdutos from "../../moks/produtos.json"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Button() {
   const {
@@ -14,7 +16,7 @@ export default function Button() {
 
   } = useContext(FormContext);
 
-  
+
 
   function getProdutosPorID() {
     let newLista = produtos.map(item => ListaProdutos.filter(x => x.id == item)[0])
@@ -45,29 +47,93 @@ export default function Button() {
     return ""
   }
 
-  function PostForm() {
-    let newListaProduto = getProdutosPorID()
-    let newLojas = lojas?.map(item=> item.toString())
-    let form = {
-      "lojas": newLojas,
-      "produtos": newListaProduto,
-      "categoria": categoria,
-      "dataInicio": formataDataIso(dataInicio),
-      "dataFinal": formataDataIso(dataFinal)
-    }
-
-    fetch('https://api-aspnet-final-production.up.railway.app/api/pesquisa/cadastro',{
-      method:'POST',
-      headers:{'content-type': 'application/json'},
-      body: JSON.stringify(form)
-
-    }).then(()=> console.log(form,'Cadastrado com sucesso')).catch(e=> console.log(e,"erro amigao") )
-
+  //Flash alert para caso não preencha lojas
+  function erroLojaVazia() {
+    toast.warning('Preencha corretamente as lojas', {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    })
   }
 
-  return (
-    <div className='containerButton'>
-      <button className='button' onClick={() => PostForm()}>Enviar</button>
-    </div>
-  )
+  //Flash alert para caso não preencha corretamente produtos
+  function erroProdutosVazia() {
+    toast.warning('Preencha corretamente os produtos', {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+
+    })
+  };
+
+  //caso não preencha corretamente as categorias
+  function erroCategoriasVazia() {
+    toast.warning('Preencha corretamente as categorias', {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+
+    })
+  };
+
+
+function PostForm() {
+  let newListaProduto = getProdutosPorID()
+  let newLojas = lojas?.map(item => item.toString())
+  let form = {
+    "lojas": newLojas,
+    "produtos": newListaProduto,
+    "categoria": categoria,
+    "dataInicio": formataDataIso(dataInicio),
+    "dataFinal": formataDataIso(dataFinal)
+  };
+
+
+
+  if (lojas.length == 0) {
+    return erroLojaVazia();
+  }
+  else if(categoria == null){
+    return erroCategoriasVazia()
+  }
+  else if (produtos.length == 0) {
+    return erroProdutosVazia()
+  }
+  else {
+    fetch('https://api-aspnet-final-production.up.railway.app/api/pesquisa/cadastro', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(form)
+
+    }).then(() => console.log(form, 'Cadastrado com sucesso')).catch(e => console.log(e, "erro amigao"))
+  }
+
+
+
 }
+
+return (
+  <div className='containerButton'>
+    <button className='button' onClick={() => PostForm()}>Enviar</button>
+    <ToastContainer />
+  </div>
+)
+}
+
+
+
