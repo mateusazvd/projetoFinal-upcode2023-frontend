@@ -5,12 +5,16 @@
 .containerMain {
     background-color: #ffffff;
     width: 90vw;
-    height: 57rem;
+    height: 63rem;
     margin: 2rem auto;
     border-radius: 10px;
     padding: 3rem 2rem ;
     display: flex;
     justify-content: space-around;
+}
+.containerCadeadoPri {
+    display: flex;
+    flex-direction: column;
 }
 
 .containerMainPart {
@@ -77,4 +81,21 @@ hr {
     font-size: 12px;
     text-align: center;
     color: #808080
+}
+
+.containerCheckRemoveList {
+    display: flex;
+    justify-content: space-between;
+}
+
+.containerRemove {
+    display: flex;
+    column-gap: .5rem;
+    color: rgba(255, 0, 8, 0.733);
+    cursor: pointer;
+}
+
+.div-btn {
+    display: flex;
+    justify-content: flex-end;
 }
