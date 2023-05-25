@@ -2,7 +2,6 @@ import Header from './components/Header';
 import './App.css';
 import Main from './components/Main/Index';
 import Menu from './components/Menu';
-import MainResum from "./components/Resume/MainResum/MainResum"
 
 function App() {
   return (
@@ -10,7 +9,7 @@ function App() {
         <Header />
         <Menu />
         <Main />
-        <MainResum />
+        
     </div>
   );
 }

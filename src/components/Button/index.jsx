@@ -45,31 +45,6 @@ export default function Button() {
     return ""
   }
 
-  function NotificacaoPeriodo() {
-    toast.warning('Preencha corretamente o período', {
-      position: "top-right",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "colored",
-    })
-  }
-
-  function NotificacaoConcluido() {
-    toast.success('Preenchido com sucesso', {
-      position: "top-right",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "colored",
-    })
-  }
 
   function PostForm() {
     let newListaProduto = getProdutosPorID()
@@ -80,10 +55,6 @@ export default function Button() {
       "categoria": categoria,
       "dataInicio": formataDataIso(dataInicio),
       "dataFinal": formataDataIso(dataFinal)
-    }
-
-    if (dataInicio == null || dataFinal == null) {
-      NotificacaoPeriodo()
     }
     
     fetch('https://api-aspnet-final-production.up.railway.app/api/pesquisa/cadastro', {
