@@ -124,7 +124,7 @@ export default function Button() {
     else if (categoria == 0) {
       return erroCategoriasVazia()
     }
-    else if (dataInicio === 0 || dataFinal === 0) {
+    else if (dataInicio == 0 || dataFinal == 0) {
       return NotificacaoPeriodo()
     }
     else if(dataFinal < dataInicio){  

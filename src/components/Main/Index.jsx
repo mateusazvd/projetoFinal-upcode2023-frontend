@@ -155,6 +155,7 @@ export default function Main() {
 
           </div>
           <div className='containerRemove'>
+            
             <p className='textoRemove'>Remover todos</p>
 
           </div>
