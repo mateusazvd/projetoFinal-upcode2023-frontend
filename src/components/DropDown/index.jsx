@@ -15,7 +15,7 @@ export default function DropDown() {
   return (
     <div className='containerDropDown'>
       <select className='dropDown' onChange={handleDropDownChange}>
-        <option className='itemDropDown' value=""></option>
+        <option className='itemDropDown' value="">Selecione</option>
         <option className='itemDropDown' value="RX Marca">RX Marca</option>
         <option className='itemDropDown' value="RX Genérico">RX Generico</option>
         <option className='itemDropDown' value="OTC">OTC</option>

@@ -4,11 +4,13 @@
     display: flex;
     flex-direction: column;
     border-bottom: solid 1px;
-    margin-bottom: 2.7rem;
+    margin-bottom: 3rem;
+
 }
 
 .inputDaPesquisa {
     padding: .5rem 0;
     width: 30vw;
+    margin-top: 1rem;
     border: none;
 }
