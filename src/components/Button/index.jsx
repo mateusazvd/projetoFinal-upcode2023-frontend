@@ -47,49 +47,7 @@ export default function Button() {
     return ""
   }
 
-  //Flash alert para caso não preencha lojas
-  function erroLojaVazia() {
-    toast.warning('Preencha corretamente as lojas', {
-      position: "top-right",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "colored",
-    })
-  }
-
-  //Flash alert para caso não preencha corretamente produtos
-  function erroProdutosVazia() {
-    toast.warning('Preencha corretamente os produtos', {
-      position: "top-right",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "colored",
-
-    })
-  };
-
-  //caso não preencha corretamente as categorias
-  function erroCategoriasVazia() {
-    toast.warning('Preencha corretamente as categorias', {
-      position: "top-right",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "colored",
-
-    })
-  };
+  
 
 
 function PostForm() {
@@ -105,24 +63,15 @@ function PostForm() {
 
 
 
-  if (lojas.length == 0) {
-    return erroLojaVazia();
-  }
-  else if(categoria == null){
-    return erroCategoriasVazia()
-  }
-  else if (produtos.length == 0) {
-    return erroProdutosVazia()
-  }
-  else {
+  
+  
     fetch('https://api-aspnet-final-production.up.railway.app/api/pesquisa/cadastro', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(form)
 
     }).then(() => console.log(form, 'Cadastrado com sucesso')).catch(e => console.log(e, "erro amigao"))
-  }
-
+  
 
 
 }
