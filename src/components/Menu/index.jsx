@@ -1,10 +1,10 @@
 import './style.css'
 
-export default function Menu() {
+export default function Menu({setDashboard}) {
     return (
         <div className='containerMenu'>
-            <p className='textoMenu'>Dashboard</p>
-            <p className='textoMenu'>Cadastrar Pesquisa</p>
+            <p className='textoMenu' onClick={()=> setDashboard(true)}>Dashboard</p>
+            <p className='textoMenu' onClick={()=> setDashboard(false)}>Cadastrar Pesquisa</p>
         </div>
     )
 }
