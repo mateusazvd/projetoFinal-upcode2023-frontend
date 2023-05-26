@@ -104,6 +104,19 @@ export default function Button() {
     })
   };
 
+  function NotificacaoSucesso() {
+    toast.success('Preechido com sucesso', {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    })
+  };
+
 
   function PostForm() {
     let newListaProduto = getProdutosPorID()
@@ -134,6 +147,7 @@ export default function Button() {
       return erroProdutosVazia()
     }
     else {
+      NotificacaoSucesso()
       fetch('https://api-aspnet-final-production.up.railway.app/api/pesquisa/cadastro', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
