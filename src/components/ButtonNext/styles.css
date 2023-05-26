@@ -1,0 +1,12 @@
+.proxButton {
+
+    padding: .5rem 1.5rem;
+    color: white;
+    background-color: #0053a6c2;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 4rem;
+    margin-right: 10px;
+}

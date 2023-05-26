@@ -5,9 +5,12 @@ import ListaProdutos from "../../moks/produtos.json"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-export default function Button() {
+export default function Button({ setmain }) {
+
+  const { setLojas, setProdutos, setCategoria, setDataInicio, setDataFinal} = useContext(FormContext)
+
   const {
-   
+
     lojas,
     produtos,
     categoria,
@@ -47,52 +50,8 @@ export default function Button() {
     return ""
   }
 
-  //Flash alert para caso não preencha lojas
-  function erroLojaVazia() {
-    toast.warning('Preencha corretamente as lojas', {
-      position: "top-right",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "colored",
-    })
-  };
-
-  //Flash alert para caso não preencha corretamente produtos
-  function erroProdutosVazia() {
-    toast.warning('Preencha corretamente os produtos', {
-      position: "top-right",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "colored",
-
-    })
-  };
-
-  //caso não preencha corretamente as categorias
-  function erroCategoriasVazia() {
-    toast.warning('Preencha corretamente as categorias', {
-      position: "top-right",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "colored",
-
-    })
-  };
-  //caso não preencha corretamente os periodos
-  function NotificacaoPeriodo() {
-    toast.warning('Preencha corretamente o período', {
+  function NotificacaoErro() {
+    toast.error('Erro ao cadastrar a pesquisa', {
       position: "top-right",
       autoClose: 3000,
       hideProgressBar: false,
@@ -105,7 +64,7 @@ export default function Button() {
   };
 
   function NotificacaoSucesso() {
-    toast.success('Preechido com sucesso', {
+    toast.success('Pesquisa enviada com sucesso', {
       position: "top-right",
       autoClose: 3000,
       hideProgressBar: false,
@@ -117,6 +76,18 @@ export default function Button() {
     })
   };
 
+  function VoltarInicio() {
+    NotificacaoSucesso()
+    setTimeout(()=>{
+      setmain(true)
+      setLojas([])
+      setProdutos([])
+      setCategoria("")
+      setDataInicio("")
+      setDataFinal("")
+    },2500)
+  }
+
 
   function PostForm() {
     let newListaProduto = getProdutosPorID()
@@ -127,39 +98,26 @@ export default function Button() {
       "categoria": categoria,
       "dataInicio": formataDataIso(dataInicio),
       "dataFinal": formataDataIso(dataFinal)
+
     };
 
 
+    fetch('https://api-aspnet-final-production.up.railway.app/api/pesquisa/cadastro', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(form)
 
-    if (lojas.length === 0) {
-      return erroLojaVazia();
-    }
-    else if (categoria == 0) {
-      return erroCategoriasVazia()
-    }
-    else if (dataInicio === 0 || dataFinal === 0) {
-      return NotificacaoPeriodo()
-    }
-    else if(dataFinal < dataInicio){  
-      return NotificacaoPeriodo()
-    }
-    else if (produtos.length == 0) {
-      return erroProdutosVazia()
-    }
-    else {
-      NotificacaoSucesso()
-      fetch('https://api-aspnet-final-production.up.railway.app/api/pesquisa/cadastro', {
-        method: 'POST',
-        headers: { 'content-type': 'application/json' },
-        body: JSON.stringify(form)
-
-      }).then(() => console.log(form, 'Cadastrado com sucesso')).catch(e => console.log(e, "erro amigao"))
-    }
-
-
+    }).then(() => VoltarInicio()).catch(e => NotificacaoErro())
+  
   }
 
+
+
+
+
+
   return (
+
     <div className='containerButton'>
       <button className='button' onClick={() => PostForm()}>Enviar</button>
       <ToastContainer />

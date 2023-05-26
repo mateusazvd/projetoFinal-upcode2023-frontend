@@ -22,8 +22,15 @@ export default function Main({setMain}) {
   const [lista, setLista] = useState(LojasList)
   const [pesquisaProduto, setPesquisaProduto] = useState('');
   const [listaProdutos, setListaProduto] = useState(ProdutosList)
-
   const [selectAlChecked, setSelectAllChecked] = useState(false)
+
+  
+  
+
+  function DeleteAll(){
+    setProdutos([])
+    
+  }
 
 
 
@@ -73,6 +80,8 @@ export default function Main({setMain}) {
     setDataFinal(data)
 
   }
+
+  
 
   return (
     <>
@@ -155,8 +164,9 @@ export default function Main({setMain}) {
             <span htmlFor="bucarTodos" className='input-selecionar-todos'>Selecionar todos os produtos</span>
 
           </div>
+         
           <div className='containerRemove'>
-            <p className='textoRemove'>Remover todos</p>
+            <button className='textoRemove' onClick = {() => DeleteAll()}>Remover todos</button>
 
           </div>
 
