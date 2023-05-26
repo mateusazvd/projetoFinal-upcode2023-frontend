@@ -1,0 +1,29 @@
+.container--pesqEnviadas{
+    margin-top: 1rem;
+    background-color: #fff;
+    width: 21vw;
+    height: 50vh;
+    border-radius: 5px;
+    padding: 1.5rem 2rem 0 2rem;
+    overflow-y: scroll; 
+}
+
+.container--pesqEnviadas::-webkit-scrollbar{
+    width: 2px;
+    height: 2px;
+    background-color: rgba(212, 212, 212, 0.951);
+}
+.container--pesqEnviadas::-webkit-scrollbar-thumb{
+    background-color: #0054A6;
+}
+
+.PesquisaInput{
+    text-align: center;
+    margin-bottom: .25rem;
+    font-size: 15px;
+    padding: .7rem;
+    background: rgb(239, 239, 239);
+   border: 1px solid rgb(255, 255, 255) ;
+   border-radius: 5px;
+
+}

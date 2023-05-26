@@ -1,7 +1,6 @@
 import React from 'react'
 import Filtros from '../FIltros'
-import ListaProduto from '../ListaProduto'
-
+import PesqEnviadas from '../PesquisasEnviadas'
 import './style.css'
 
 export default function Dashboard() {
@@ -9,10 +8,7 @@ export default function Dashboard() {
     <div className='containerMainDashboard' >
       <div>
         <Filtros />
-      </div>
-      <div>
-        <ListaProduto />
-      </div>
+        <PesqEnviadas/>
     </div>
   )
 }
