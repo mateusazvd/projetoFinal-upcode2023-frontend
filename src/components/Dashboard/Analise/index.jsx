@@ -11,15 +11,7 @@ export default function Analise() {
 
         <hr />  
         <AnaliseResposta />
-        <AnaliseResposta />
-        <AnaliseResposta />
-        <AnaliseResposta />
-        <AnaliseResposta />
-        <AnaliseResposta />
-        <AnaliseResposta />
-        <AnaliseResposta />
-        <AnaliseResposta />
-        <AnaliseResposta />
+       
        
     </div>
   )
