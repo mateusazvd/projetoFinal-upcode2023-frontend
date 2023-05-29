@@ -1,9 +1,9 @@
 .containerMainDashboard {
     background-color: #00366d10;
     width: 100vw;
-    height: 100vh;
+    height: 63rem;
     border-radius: 10px;
     padding: 3rem 2rem  0 2rem;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }

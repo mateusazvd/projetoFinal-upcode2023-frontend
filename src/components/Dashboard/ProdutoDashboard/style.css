@@ -1,0 +1,17 @@
+.containerProdutoDash {
+    border: solid 1px rgba(0, 0, 0, 0.22);
+    padding: .5rem .5rem;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    height: 8vh;
+    width: 22.5vw;
+    overflow-y: hidden;
+}
+
+
+.itemProdutos {
+    width: 22rem;
+    font-size: 14px;
+    color: rgb(87, 87, 87);
+}
