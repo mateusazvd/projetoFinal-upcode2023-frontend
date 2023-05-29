@@ -37,7 +37,6 @@ export default function MainResume({setMain}) {
                 <ResumRedConcorrente />
                 <ResuCardConcorrente />
 
-                
                 <div className="divButton">
                     <ButtonBack setmain= {setMain}/>
                     <Button setmain = {setMain}/>
