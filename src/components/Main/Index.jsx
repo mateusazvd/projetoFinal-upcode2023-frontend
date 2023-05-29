@@ -15,7 +15,7 @@ import Button from '../Button'
 import ButtonNext from '../ButtonNext'
 
 
-export default function Main({setMain}) {
+export default function Main({ setMain }) {
 
   const { setDataFinal, setDataInicio, categoria, produtos, setProdutos } = useContext(FormContext);
   const [pesquisa, setPesquisa] = useState('');
@@ -24,15 +24,13 @@ export default function Main({setMain}) {
   const [listaProdutos, setListaProduto] = useState(ProdutosList)
   const [selectAlChecked, setSelectAllChecked] = useState(false)
 
-  
-  
 
-  function DeleteAll(){
+
+
+  function DeleteAll() {
     setProdutos([])
     
   }
-
-
 
   useEffect(() => {
     if (selectAlChecked) {
@@ -51,7 +49,6 @@ export default function Main({setMain}) {
       setListaProduto(ProdutosList)
     }
   }
-
   function PesquisarProdutos(text) {
     const produtosFilter = listaProdutos.filter(produto => produto.nome.toLowerCase().includes(pesquisaProduto.toLowerCase()));
     setListaProduto(produtosFilter)
@@ -72,7 +69,6 @@ export default function Main({setMain}) {
     }
 
   }
-
   function dataInicial(data) {
     setDataInicio(data)
   }
@@ -81,108 +77,107 @@ export default function Main({setMain}) {
 
   }
 
-  
-
   return (
     <>
-    <div className='containerMain'>
-      <div className='containerCadeadoPri'>
-        <div>
-          <TitlePesq />
-          
-        </div>
-        <div className='containerLojas'>
-          <div className='lojasPesquisa' >
-            <Title
-              className="titleInput"
-              titulo="Lojas"
-              descricao="Selecione as lojas que realizarão a pesquisa"
-            />
-            <InputPesq
-              className="inputPesq"
-              placeholder='Pesquisar lojas'
-              value={pesquisa}
-              pesquisar={PesquisarLoja}
-            />
-          </div>
-        </div>
-        <>
-          <div className='resultLojas'>
-            {lista.length > 0 ? lista.map(item => <CardLojas key={item.codigo} nome={item.nomeFilial} id={item.codigo} />) : "Loja não encontrada."}
-          </div>
-        </>
-      </div>
-      <div className='containerCadeado'>
-        <div className='containerMainPart'>
-          <div className='formProduto'>
-            <Title
-              titulo='Categorias'
-              descricao='Selecione sua categoria'
-            />
-            <DropDown />
-          </div>
+      <div className='containerMain'>
+        <div className='containerCadeadoPri'>
+          <div>
+            <TitlePesq />
 
-          <hr></hr>
+          </div>
+          <div className='containerLojas'>
+            <div className='lojasPesquisa' >
+              <Title
+                className="titleInput"
+                titulo="Lojas"
+                descricao="Selecione as lojas que realizarão a pesquisa"
+                concorrentes='Concorrente'
+              />
+              <InputPesq
+                className="inputPesq"
+                placeholder='Pesquisar lojas'
+                value={pesquisa}
+                pesquisar={PesquisarLoja}
+              />
+            </div>
+          </div>
+          <>
+            <div className='resultLojas'>
+              {lista.length > 0 ? lista.map(item => <CardLojas key={item.codigo} nome={item.nomeFilial} id={item.codigo} />) : "Loja não encontrada."}
+            </div>
+          </>
+        </div>
+        <div className='containerCadeado'>
+          <div className='containerMainPart'>
+            <div className='formProduto'>
+              <Title
+                titulo='Categorias'
+                descricao='Selecione sua categoria'
+              />
+              <DropDown />
+            </div>
 
-          <div className='formData'>
-            <Title
-              titulo='Período'
-              descricao='Determine o período da pesquisa'
-            />
-            <div className='inputs'>
-              <div>
-                <p className='periodo'>início</p>
-                <InputDate mudarData={dataInicial} />
-              </div>
-              <div>
-                <p className='periodo'>fim</p>
-                <InputDate mudarData={dataFinal} />
+            <hr></hr>
+
+            <div className='formData'>
+              <Title
+                titulo='Período'
+                descricao='Determine o período da pesquisa'
+              />
+              <div className='inputs'>
+                <div>
+                  <p className='periodo'>início</p>
+                  <InputDate mudarData={dataInicial} />
+                </div>
+                <div>
+                  <p className='periodo'>fim</p>
+                  <InputDate mudarData={dataFinal} />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className='containerProduto'>
-          <Title
-            titulo='Produtos'
-            descricao='Selecione o seu produto, abaixo:'
-          />
-          {/* "tamanho" definição do tamnaho do componente InputPesq */}
-          <InputPesq
-            tamanho="500"
-            placeholder='Pesquisar produtos'
-            value={pesquisaProduto}
-            pesquisar={PesquisarProdutos}
-          />
-        </div>
-        <div className='containerCheckRemoveList'>
-          <div>
-            {/* Input único de marcação */}
-            <input type="checkbox"
-              id='bucarTodos'
-              value='check'
-              onClick={() => setSelectAllChecked(!selectAlChecked)} />
-            <span htmlFor="bucarTodos" className='input-selecionar-todos'>Selecionar todos os produtos</span>
+          <div className='containerProduto'>
+            <Title
+              titulo='Produtos'
+              descricao='Selecione o seu produto, abaixo:'
+            />
+            {/* "tamanho" definição do tamnaho do componente InputPesq */}
+            <InputPesq
+              tamanho="500"
+              placeholder='Pesquisar produtos'
+              value={pesquisaProduto}
+              pesquisar={PesquisarProdutos}
+            />
+          </div>
+          <div className='containerCheckRemoveList'>
+            <div>
+              {/* Input único de marcação */}
+              <input type="checkbox"
+                id='bucarTodos'
+                value='check'
+                onClick={() => setSelectAllChecked(!selectAlChecked)} />
+              <span htmlFor="bucarTodos" className='input-selecionar-todos'>Selecionar todos os produtos</span>
+
+            </div>
+
+            <div className='containerRemove'>
+              <button className='textoRemove' onClick={() => DeleteAll()}>Remover todos</button>
+
+            </div>
 
           </div>
-         
-          <div className='containerRemove'>
-            <button className='textoRemove' onClick = {() => DeleteAll()}>Remover todos</button>
+          <div className='containerSelecProdutos'>
+            <div className='listaProdutos'>
+              {listaProdutos.length > 0 ? listaProdutos.map(item => <Produtos key={item.id} descricao={item.descricao} nome={item.nome} id={item.id} />) : "Produto não encontrado."}
+            </div>
 
-          </div>
-
-        </div>
-        <div className='containerSelecProdutos'>
-          <div className='listaProdutos'>
-            {listaProdutos.length > 0 ? listaProdutos.map(item => <Produtos key={item.id} descricao={item.descricao} nome={item.nome} id={item.id} />) : "Produto não encontrado."}
-          </div>
-
-          <div className='div-btn'>
-            <ButtonNext setMain = {setMain}/>
+            <div className='div-btn'>
+              <ButtonNext setMain={setMain} />
+            </div>
           </div>
         </div>
       </div>
-    </div>
- 
+
     </>
   )
 }

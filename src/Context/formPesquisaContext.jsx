@@ -18,6 +18,8 @@ export const FormProvider = ({children}) => {
     const [dataInicio,setDataInicio] = useState("")
     const [dataFinal,setDataFinal] = useState("")
     const [nomePesquisa,setNomePesquisa] = useState("")
+    // const [checked, setChecked] = useState(false)
+
 
     return(
         <FormContext.Provider value={{
@@ -32,7 +34,8 @@ export const FormProvider = ({children}) => {
             setProdutos,
             setCategoria,
             setDataFinal,
-            setDataInicio
+            setDataInicio,
+
             }}>
                 
             {children}

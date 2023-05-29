@@ -5,6 +5,7 @@ import ProdutosList from '../../moks/produtos.json'
 
 export default function Produtos({ nome, id, descricao }) {
     const { produtos, setProdutos } = useContext(FormContext)
+    // const { checked, setChecked } = useContext(FormContext)
     const [texto, setTexto] = useState(false)
     const [checked, setChecked] = useState(false)
 
