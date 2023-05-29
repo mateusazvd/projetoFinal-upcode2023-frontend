@@ -2,6 +2,7 @@
     display: flex;
 }
 .titulo {
+  
     font-size: 22px;
     font-weight: 500;
     border-left: solid 3px #0054A6;
@@ -9,13 +10,12 @@
 }
 
 .descricao {
+    
     padding-top: 0.5rem;
     font-size: 14px;
     color: #202020
 }
-
-.concorrente {
-    font-size: 18px;
-    font-weight: 500;
-    padding-left: 1rem;
+.containerTitle{
+    
+  overflow-y: hidden;
 }

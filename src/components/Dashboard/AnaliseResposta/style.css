@@ -1,0 +1,24 @@
+.teste{
+    display: flex;
+    justify-content: center;
+
+}
+.container{
+ display: flex;
+ justify-content: space-between;
+ border: 1px solid rgb(192, 192, 192) ;
+ border-radius: 5px;
+ width: 90%;
+ align-items: center;
+}
+
+.container-loja{
+    padding: 1em;
+    border-radius: 5px;
+}
+.container:hover{
+    cursor: pointer;
+ background-color: #0053a626;
+}
+
+

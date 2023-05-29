@@ -9,6 +9,11 @@
     overflow-y: hidden;
 }
 
+.containerProdutoDash:hover {
+    cursor: pointer;
+    background-color: #0053a626;
+}
+
 
 .itemProdutos {
     width: 22rem;
