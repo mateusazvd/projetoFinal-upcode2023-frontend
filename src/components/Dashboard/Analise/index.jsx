@@ -1,4 +1,5 @@
 import React from 'react'
+import AnaliseResposta from '../AnaliseResposta'
 import './style.css'
 
 export default function Analise() {
@@ -6,7 +7,8 @@ export default function Analise() {
     <div className='containerAnalise'>
         <div>
             <p className='areaResposta'>Respostas</p>
-            <p className='areaGrafico'>Gráfico</p>
+            <AnaliseResposta />
+
         </div>
 
         <hr />  

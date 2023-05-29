@@ -9,7 +9,7 @@
 .containerAnalise div {
     display: flex;
     justify-content: center;
-    margin-top: 1rem;
+    margin-top: 2rem;
     column-gap: 5rem;
 }
 
