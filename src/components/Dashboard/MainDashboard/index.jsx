@@ -16,13 +16,8 @@ export default function Dashboard() {
         <Filtros />
         <PesqEnviadas SetPesquisaSelecionada = {SetPesquisaSelecionada} />
       </div>
-<<<<<<< HEAD
       <div>
         <ListaProdutos pesquisaSelecionada = {pesquisaSelecionada} />
-=======
-      <div className='containerRight'>
-        <ListaProdutos />
->>>>>>> 601567cc06c59b60d09e5d667897e7942bd75f6b
         <Analise />
       </div>
     </div>
