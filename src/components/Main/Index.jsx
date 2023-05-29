@@ -13,23 +13,24 @@ import { FormContext } from '../../Context/formPesquisaContext'
 import TitlePesq from '../TitlePesq'
 import Button from '../Button'
 import ButtonNext from '../ButtonNext'
+import concorrentesList from "../../moks/concorrentes.json"
+import ConcorrentesCard from '../ConcorrentesCard'
 
 
 export default function Main({ setMain }) {
 
-  const { setDataFinal, setDataInicio, categoria, produtos, setProdutos } = useContext(FormContext);
+  const { setDataFinal, setDataInicio, categoria, produtos, setProdutos,setNomePesquisa } = useContext(FormContext);
   const [pesquisa, setPesquisa] = useState('');
   const [lista, setLista] = useState(LojasList)
   const [pesquisaProduto, setPesquisaProduto] = useState('');
   const [listaProdutos, setListaProduto] = useState(ProdutosList)
   const [selectAlChecked, setSelectAllChecked] = useState(false)
 
-
-
+  //estado de filiais e concorrentes
+  const [filiais,setFiliais] = useState(false)
 
   function DeleteAll() {
     setProdutos([])
-    
   }
 
   useEffect(() => {
@@ -83,16 +84,22 @@ export default function Main({ setMain }) {
         <div className='containerCadeadoPri'>
           <div>
             <TitlePesq />
-
           </div>
           <div className='containerLojas'>
             <div className='lojasPesquisa' >
-              <Title
-                className="titleInput"
-                titulo="Filiais"
-                descricao="Selecione as lojas que realizarão a pesquisa"
-                concorrentes='Concorrente'
-              />
+              <div className='selectLojasContainer'>
+                <div className='title-lojas'>
+                  <h1 className='title-lojas'
+                   onClick={()=>setFiliais(true)}>Filiais</h1>
+                </div>
+                <div className='title-lojas'>
+                <h1 className='title-lojas'
+                onClick={()=>setFiliais(false)}>Concorrentes</h1>
+                </div>
+              </div>
+              <p className='description'>
+                {filiais?"Selecione as filiais que farão a pesquisa":"Selecione as concorrentes em que a pesquisa será feita"}
+              </p>
               <InputPesq
                 className="inputPesq"
                 placeholder='Pesquisar lojas'
@@ -102,9 +109,11 @@ export default function Main({ setMain }) {
             </div>
           </div>
           <>
-            <div className='resultLojas'>
+            {filiais?<div className='resultLojas'>
               {lista.length > 0 ? lista.map(item => <CardLojas key={item.codigo} nome={item.nomeFilial} id={item.codigo} />) : "Loja não encontrada."}
-            </div>
+            </div>:<div className='resultLojas'>
+              {concorrentesList.length > 0 ? concorrentesList.map(item => <ConcorrentesCard key={item.codigo} nome={item.nome} id={item.codigo} />) : "Loja não encontrada."}
+            </div>}
           </>
         </div>
         <div className='containerCadeado'>

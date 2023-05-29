@@ -3,22 +3,10 @@ import ProdutoDashboard from '../ProdutoDashboard'
 import './style.css'
 
 
-export default function ListaProdutos() {
+export default function ListaProdutos({pesquisaSelecionada}) {
   return (
     <div className='containerListaPro'>
-      <ProdutoDashboard />
-      <ProdutoDashboard />
-      <ProdutoDashboard />
-      <ProdutoDashboard />
-      <ProdutoDashboard />
-      <ProdutoDashboard />
-      <ProdutoDashboard />
-      <ProdutoDashboard />
-      <ProdutoDashboard />
-      <ProdutoDashboard />
-      <ProdutoDashboard />
-      <ProdutoDashboard />
-      <ProdutoDashboard />
+      {pesquisaSelecionada?.produtos?.map(item=><ProdutoDashboard nome = {item.nome}/>)}
     </div>
   )
 }

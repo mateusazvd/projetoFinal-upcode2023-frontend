@@ -1,16 +1,15 @@
 import React, { useContext } from 'react'
 import { FormContext } from '../../Context/formPesquisaContext';
-import './style.css'
 import ListaProdutos from "../../moks/produtos.json"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function Button({ setmain }) {
 
-  const { setLojas, setProdutos, setCategoria, setDataInicio, setDataFinal} = useContext(FormContext)
+  const { setLojas, setProdutos, setCategoria, setDataInicio, setDataFinal,setNomePesquisa} = useContext(FormContext)
 
   const {
-
+    nomePesquisa,
     lojas,
     produtos,
     categoria,
@@ -97,7 +96,11 @@ export default function Button({ setmain }) {
       "produtos": newListaProduto,
       "categoria": categoria,
       "dataInicio": formataDataIso(dataInicio),
-      "dataFinal": formataDataIso(dataFinal)
+      "dataFinal": formataDataIso(dataFinal),
+      "nome":nomePesquisa,
+      "lojas_concluidas":[],
+      
+
 
     };
 

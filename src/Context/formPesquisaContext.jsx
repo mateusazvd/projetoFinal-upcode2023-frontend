@@ -12,6 +12,7 @@ export const FormProvider = ({children}) => {
         dataFinal:""
     });
 
+    const [concorrentes,setConcorrentes] = useState([])
     const [lojas,setLojas] = useState([])
     const [produtos,setProdutos] = useState([])
     const [categoria,setCategoria] = useState("")
@@ -35,6 +36,10 @@ export const FormProvider = ({children}) => {
             setCategoria,
             setDataFinal,
             setDataInicio,
+            concorrentes,
+            setConcorrentes,
+            nomePesquisa,
+            setNomePesquisa
 
             }}>
                 

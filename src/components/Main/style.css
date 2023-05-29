@@ -1,7 +1,31 @@
 *{
     overflow-x: hidden;
 }
+.selectLojasContainer{
+    display:  flex;
+    justify-content: space-between;
 
+}
+
+.description{
+
+    margin: 10px 0px;
+}
+
+.title-lojas{
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: 500;
+}
+.title-lojas:hover{
+    color: rgba(0, 0, 0, 0.747);
+    border-bottom: 1px solid black;
+}
+
+.selected{
+    border-bottom: 1px solid black;
+}
 .containerMain {
     background-color: #ffffff;
     width: 90vw;
@@ -55,7 +79,7 @@ hr {
 .lojasPesquisa{
     overflow-y: hidden;
     width: 30vw;
-    height: 20vh;
+    height: auto;
 }
 
 .containerLojas {

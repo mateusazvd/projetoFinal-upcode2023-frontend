@@ -7,8 +7,6 @@ export default function Analise() {
     <div className='containerAnalise'>
         <div>
             <p className='areaResposta'>Respostas</p>
-            
-
         </div>
 
         <hr />  
