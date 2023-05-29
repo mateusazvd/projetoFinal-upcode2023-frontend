@@ -7,11 +7,22 @@ export default function Analise() {
     <div className='containerAnalise'>
         <div>
             <p className='areaResposta'>Respostas</p>
-            <AnaliseResposta />
+            
 
         </div>
 
         <hr />  
+        <AnaliseResposta />
+        <AnaliseResposta />
+        <AnaliseResposta />
+        <AnaliseResposta />
+        <AnaliseResposta />
+        <AnaliseResposta />
+        <AnaliseResposta />
+        <AnaliseResposta />
+        <AnaliseResposta />
+        <AnaliseResposta />
+       
     </div>
   )
 }
