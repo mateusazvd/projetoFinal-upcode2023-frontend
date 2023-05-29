@@ -10,6 +10,8 @@ import { useContext } from "react";
 import { FormContext } from "../../../Context/formPesquisaContext";
 import Button from '../../Button'
 import ButtonBack from '../../buttonVoltar'
+import ResumRedConcorrente from "../ResumRedConcorrente";
+import ResuCardConcorrente from "../ResuCardConcorrente";
 
 
 export default function MainResume({setMain}) {
@@ -32,6 +34,10 @@ export default function MainResume({setMain}) {
                         <ResuCardProdutos key={index} idProdutos={id} />
                     ))}
                 </div>
+                <ResumRedConcorrente />
+                <ResuCardConcorrente />
+
+                
                 <div className="divButton">
                     <ButtonBack setmain= {setMain}/>
                     <Button setmain = {setMain}/>

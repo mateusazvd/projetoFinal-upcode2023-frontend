@@ -6,5 +6,13 @@
     padding: 3rem 2rem  0 2rem;
     display: flex;
     justify-content: space-between;
+<<<<<<< HEAD
     
 }
+=======
+}
+
+.containerLeft {
+    overflow-y: hidden;
+}
+>>>>>>> 601567cc06c59b60d09e5d667897e7942bd75f6b

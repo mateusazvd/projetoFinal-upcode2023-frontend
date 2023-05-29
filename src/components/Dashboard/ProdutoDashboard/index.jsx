@@ -11,8 +11,13 @@ export default function ProdutoDashboard({nome}) {
     }
   }
   return (
+<<<<<<< HEAD
     <div className='containerProdutoDash' title={nome}>
      <p className='itemProduto'>{ajustarString(nome)}</p>
+=======
+    <div className='containerProdutoDash'>
+     <p className='itemProduto'></p>
+>>>>>>> 601567cc06c59b60d09e5d667897e7942bd75f6b
     </div>
   )
 }
