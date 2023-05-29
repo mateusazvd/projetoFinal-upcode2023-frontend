@@ -1,0 +1,22 @@
+.containerPesquisaDash {
+    margin-top: .5rem;
+    background-color: #fff;
+    width: 21vw;
+    border-radius: 5px;
+
+    overflow-y: scroll; 
+}
+
+
+.itemPesquisa {
+    padding: 1em;
+    width: 14rem;
+    font-size: 14px;
+    text-align: center;
+    color: rgb(87, 87, 87);
+}
+
+.itemPesquisa:hover{
+ cursor: pointer;
+ background-color: #0053a626;
+}
