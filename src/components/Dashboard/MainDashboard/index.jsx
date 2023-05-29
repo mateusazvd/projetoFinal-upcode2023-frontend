@@ -8,11 +8,11 @@ import './style.css'
 export default function Dashboard() {
   return (
     <div className='containerMainDashboard' >
-      <div>
+      <div className='containerLeft'>
         <Filtros />
         <PesqEnviadas />
       </div>
-      <div>
+      <div className='containerRight'>
         <ListaProdutos />
         <Analise />
       </div>

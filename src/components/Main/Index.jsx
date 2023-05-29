@@ -11,7 +11,6 @@ import LojasList from '../../moks/lojas.json'
 import { useState, useContext } from 'react'
 import { FormContext } from '../../Context/formPesquisaContext'
 import TitlePesq from '../TitlePesq'
-import Button from '../Button'
 import ButtonNext from '../ButtonNext'
 
 
