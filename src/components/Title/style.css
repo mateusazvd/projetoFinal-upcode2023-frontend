@@ -18,7 +18,7 @@
 .concorrente {
     font-size: 22px;
     font-weight: 500;
-    
+    cursor: pointer;
     padding-left: 1rem;
 }
 

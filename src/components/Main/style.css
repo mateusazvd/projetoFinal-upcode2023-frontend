@@ -5,7 +5,7 @@
 .containerMain {
     background-color: #ffffff;
     width: 90vw;
-    height: 63rem;
+    height: 67rem;
     margin: 2rem auto;
     border-radius: 10px;
     padding: 3rem 2rem  0 2rem;
@@ -39,7 +39,7 @@ hr {
 }
 
 .listaProdutos {
-    height: 30rem;
+    height: 34.6rem;
     width: 40vw;
 }
 .listaProdutos::-webkit-scrollbar{

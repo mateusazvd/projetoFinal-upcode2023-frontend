@@ -89,7 +89,7 @@ export default function Main({ setMain }) {
             <div className='lojasPesquisa' >
               <Title
                 className="titleInput"
-                titulo="Lojas"
+                titulo="Filiais"
                 descricao="Selecione as lojas que realizarão a pesquisa"
                 concorrentes='Concorrente'
               />
