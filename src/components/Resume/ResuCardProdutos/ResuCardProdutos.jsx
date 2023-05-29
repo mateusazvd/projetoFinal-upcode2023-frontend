@@ -3,6 +3,7 @@ import './ResuCardProdutos.css'
 import {CiCircleRemove} from 'react-icons/ci'
 import { FormContext } from '../../../Context/formPesquisaContext'
 import listProdutos from "../../../moks/produtos.json"
+
 export default function ResuCardProdutos({idProdutos}) {
 
   const { produtos, setProdutos } = useContext(FormContext)
