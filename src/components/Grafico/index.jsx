@@ -33,7 +33,7 @@ export default function BarChart({ data }) {
       const labels = Object.keys(groupedData);
       const prices = Object.values(groupedData).map((item) => {
         const average = item.prices.reduce((sum, price) => sum + price, 0) / item.prices.length;
-        return average.toFixed(2); // Arredondar a média para 2 casas decimais
+        return average.toFixed(2); 
       });
 
       chartInstance.current = new Chart(ctx, {

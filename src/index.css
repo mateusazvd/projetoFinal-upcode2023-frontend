@@ -26,6 +26,16 @@ body {
 
 }
 
+*::-webkit-scrollbar-thumb{
+  background-color: #0054A6;
+}
+*::-webkit-scrollbar{
+  width: 2px;
+  height: 2px;
+  background-color: rgba(212, 212, 212, 0.951);
+}
+
+
 code {
 
   font-family: 'Roboto', 'sans-serif', 'Courier New',
