@@ -26,7 +26,7 @@ export default function Main({ setMain }) {
   const [selectAlChecked, setSelectAllChecked] = useState(false)
 
   //estado de filiais e concorrentes
-  const [filiais,setFiliais] = useState(false)
+  const [filiais,setFiliais] = useState(true)
 
   function DeleteAll() {
     setProdutos([])

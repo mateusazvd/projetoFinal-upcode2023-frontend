@@ -3,12 +3,12 @@ import './style.css'
 import { CiCircleRemove } from 'react-icons/ci'
 
 
-export default function ResuCardConcorrente() {
+export default function ResuCardConcorrente({nome}) {
 
 
   return (
     <div className='containerCardConcorrente'>
-      <p className='itemCardConcorrente'>dawdaw</p>
+      <p className='itemCardConcorrente'>{nome}</p>
       <CiCircleRemove className='iconRemove' />
     </div>
   )

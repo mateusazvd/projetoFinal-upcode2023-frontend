@@ -15,12 +15,13 @@ import ResuCardConcorrente from "../ResuCardConcorrente";
 
 
 export default function MainResume({setMain}) {
-    const { lojas, produtos, setLojas } = useContext(FormContext)
+    const { lojas, produtos, setLojas,concorrentes } = useContext(FormContext)
 
     return (
         <>
             <div className="ResumMain">
                 <TitleCatResum />
+                <p className="subtitulo">Confirme os dados antes de enviar sua pesquisa</p>
                 <ResumRedLojas />
                 <div className="resuCardLojas">
                     {lojas.map((id, index) => (
@@ -35,12 +36,16 @@ export default function MainResume({setMain}) {
                     ))}
                 </div>
                 <ResumRedConcorrente />
-                <ResuCardConcorrente />
+               <div className="grid-concorrentes">
+               {
+                    concorrentes.map(concorrente => <ResuCardConcorrente nome={concorrente} />)
+                }
+               </div>
 
                 <div className="divButton">
                     <ButtonBack setmain= {setMain}/>
                     <Button setmain = {setMain}/>
-
+                        
 
                 </div>
             </div>

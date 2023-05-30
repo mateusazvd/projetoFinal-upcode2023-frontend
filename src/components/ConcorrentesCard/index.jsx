@@ -18,7 +18,7 @@ export default function  ConcorrentesCard({nome, id}) {
   
   //precisa retornar se a loja do card existe ou não no form
   function VerificarSeExiste(){
-    if(concorrentes?.includes(id)){
+    if(concorrentes?.includes(nome)){
       setChecked(true)
     }
   }

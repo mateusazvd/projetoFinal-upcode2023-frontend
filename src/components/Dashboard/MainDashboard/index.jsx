@@ -9,6 +9,7 @@ import './style.css'
 export default function Dashboard() {
 
   const [pesquisaSelecionada,SetPesquisaSelecionada] = useState()
+  const [respostasExibidas,setRespostasExibidas] = useState([])
 
   return (
     <div className='containerMainDashboard' >
@@ -16,9 +17,9 @@ export default function Dashboard() {
         <Filtros />
         <PesqEnviadas SetPesquisaSelecionada = {SetPesquisaSelecionada} />
       </div>
-      <div>
-        <ListaProdutos pesquisaSelecionada = {pesquisaSelecionada} />
-        <Analise />
+      <div className='container-produtos-respostas'>
+        <ListaProdutos pesquisaSelecionada = {pesquisaSelecionada} setRespostasExibidas = {setRespostasExibidas} />
+        <Analise respostasExibidas = {respostasExibidas}/>
       </div>
     </div>
   )

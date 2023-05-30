@@ -1,6 +1,5 @@
 .tituloDaPesquisa {
     height: 14vh;
-    overflow-y: hidden;
     display: flex;
     flex-direction: column;
     border-bottom: solid 1px;

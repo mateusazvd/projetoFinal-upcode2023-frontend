@@ -9,7 +9,7 @@ import Dashboard from './components/Dashboard/MainDashboard';
 
 function App() {
 
-  const [main,setMain] = useState(false)
+  const [main,setMain] = useState(true)
   const [dashboard,setDashboard] = useState(false)
 
   return (

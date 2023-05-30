@@ -4,7 +4,8 @@
     height: 81.5vh;
     border-radius: 5px;
     padding: 1.5rem 2rem 0 2rem;
-    overflow-y: scroll;
+    margin-bottom: 20px;
+
 }
 
 .container--pesqEnviadas::-webkit-scrollbar {

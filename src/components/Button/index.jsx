@@ -3,10 +3,11 @@ import { FormContext } from '../../Context/formPesquisaContext';
 import ListaProdutos from "../../moks/produtos.json"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './style.css'
 
 export default function Button({ setmain }) {
 
-  const { setLojas, setProdutos, setCategoria, setDataInicio, setDataFinal,setNomePesquisa} = useContext(FormContext)
+  const { setLojas, setProdutos, setCategoria, setDataInicio, setDataFinal,setNomePesquisa,setConcorrentes} = useContext(FormContext)
 
   const {
     nomePesquisa,
@@ -15,6 +16,7 @@ export default function Button({ setmain }) {
     categoria,
     dataInicio,
     dataFinal,
+    concorrentes,
 
   } = useContext(FormContext);
 
@@ -84,6 +86,9 @@ export default function Button({ setmain }) {
       setCategoria("")
       setDataInicio("")
       setDataFinal("")
+      setNomePesquisa("")
+      setConcorrentes([])
+      
     },2500)
   }
 
@@ -99,9 +104,7 @@ export default function Button({ setmain }) {
       "dataFinal": formataDataIso(dataFinal),
       "nome":nomePesquisa,
       "lojas_concluidas":[],
-      
-
-
+      "lojas_concorrentes":concorrentes
     };
 
 
