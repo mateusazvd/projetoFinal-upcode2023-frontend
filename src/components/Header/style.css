@@ -7,4 +7,11 @@
     background-color: var(--cor-header-color);
     width: 100vw;
     height: 8vh;
+    display: flex;
+    align-items: center;
+}
+.corDeFundo img{
+    width: 120PX;
+    height: 26px;
+    margin-left: 80px;
 }

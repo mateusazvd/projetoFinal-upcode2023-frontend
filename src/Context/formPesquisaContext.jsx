@@ -40,7 +40,6 @@ export const FormProvider = ({children}) => {
             setConcorrentes,
             nomePesquisa,
             setNomePesquisa
-
             }}>
                 
             {children}

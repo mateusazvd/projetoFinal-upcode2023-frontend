@@ -10,7 +10,7 @@ export default function PesqEnviadas({SetPesquisaSelecionada}) {
 
     useEffect(() => {
 
-        fetch('https://api-aspnet-final-production.up.railway.app/api/pesquisa/todos', {
+        fetch('https://localhost:7254/api/pesquisa/todos', {
             method: 'GET',
             headers: { 'content-type': 'application/json' },
         }).then((data) => data.json()).then((response) => setPesquisasEnviadas(response))

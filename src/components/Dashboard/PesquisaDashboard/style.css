@@ -3,7 +3,8 @@
     background-color: #fff;
     width: 21vw;
     border-radius: 5px;
-
+    display: flex;
+    align-items: center;    
 }
 
 
@@ -15,6 +16,12 @@
     font-size: 14px;
     text-align: center;
     color: rgb(87, 87, 87);
+}
+
+.remove{
+    color: rgba(255, 0, 0, 0.596);
+    margin-left: 10px;
+    cursor: pointer;
 }
 
 .itemPesquisa:hover{
